@@ -1,0 +1,9 @@
+<resources>
+    <string name="realm_app_id">application-0-cbggc</string>
+    <string name="realm_app_url">https://realm.mongodb.com/groups/6511ecba6ec1270fac244353/apps/6511ed25f2e446a49ce38344</string>
+    <string name="realm_base_url">https://realm.mongodb.com</string>
+    <string name="realm_client_api_base_url">https://eu-central-1.aws.realm.mongodb.com</string>
+    <string name="realm_data_api_base_url">https://eu-central-1.aws.data.mongodb-api.com</string>
+    <string name="realm_data_explorer_link">https://cloud.mongodb.com/links/6511ecba6ec1270fac244353/explorer/AtlasCluster/database/collection/find</string>
+    <string name="realm_data_source_name">mongodb-atlas</string>
+</resources>
