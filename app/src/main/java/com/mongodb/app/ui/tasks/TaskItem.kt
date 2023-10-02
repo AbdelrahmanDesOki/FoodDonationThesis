@@ -39,6 +39,8 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -47,12 +49,25 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
 
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.filled.Send
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+
+
 @Composable
 fun TaskItem(
     taskViewModel: TaskViewModel,
     itemContextualMenuViewModel: ItemContextualMenuViewModel,
-    task: Item
+    task: Item,
+
 ) {
+    var chatTabOpened by remember { mutableStateOf(false) }
+
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
@@ -71,15 +86,20 @@ fun TaskItem(
 //                }
 //            }
 //        )
-
-     Button(onClick = { /*TODO*/ },
-         modifier = Modifier
-             .padding( 6.dp)
-             .size(55.dp)
-
-     ) {
-         Text(text = "📩", Modifier.size(60.dp).fillMaxWidth().align(Alignment.CenterVertically))
-     }
+//
+//     Button(onClick = { /*TODO*/ },
+//         modifier = Modifier
+//             .padding( 6.dp)
+//             .size(55.dp)
+//
+//     ) {
+//         Text(text = "📩",
+//             Modifier
+//                 .size(60.dp)
+//                 .fillMaxWidth()
+//                 .align(Alignment.CenterVertically))
+//     }
+        ChatButton(onClick = { chatTabOpened = true })
 
 
         Column {
@@ -120,6 +140,26 @@ fun TaskItemPreview() {
             taskViewModel,
             ItemContextualMenuViewModel(repository, taskViewModel),
             MockRepository.getMockTask(42)
+        )
+    }
+}
+
+@Composable
+fun ChatButton(
+    onClick: () -> Unit
+) {
+    IconButton(
+        onClick = onClick,
+        modifier = Modifier
+            .padding(4.dp)
+            .background(Color.White, shape = CircleShape),
+
+//         PaddingValues(4.dp)
+    ) {
+        Icon(
+            imageVector = Icons.Default.Send,
+            contentDescription = null, // Provide a meaningful description
+            tint = Color.Black
         )
     }
 }

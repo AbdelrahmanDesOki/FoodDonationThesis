@@ -1,5 +1,7 @@
 package com.mongodb.app.ui.tasks
 
+import android.content.Intent
+import android.icu.text.CaseMap.Title
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DropdownMenuItem
@@ -8,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mongodb.app.domain.PriorityLevel
 import android.util.Log
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -17,19 +21,31 @@ import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.ContextCompat.startActivity
+import com.mongodb.app.ComposeLoginActivity
+import com.mongodb.app.MapsActivity
 import com.mongodb.app.R
 import com.mongodb.app.data.MockRepository
 import com.mongodb.app.presentation.tasks.AddItemViewModel
 import com.mongodb.app.ui.theme.MyApplicationTheme
 import com.mongodb.app.ui.theme.Purple200
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddItemPrompt(viewModel: AddItemViewModel) {
+    var navigateToActivity by remember { mutableStateOf(false) }
+
     AlertDialog(
+
         containerColor = Color.White,
         onDismissRequest = {
             viewModel.closeAddTaskDialog()
@@ -49,18 +65,46 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                     label = { Text(stringResource(R.string.item_summary)) }
                 )
                 //Details of food
-                TextField(
+                TextField (
                     colors = ExposedDropdownMenuDefaults.textFieldColors(containerColor = Color.White),
-                    value = viewModel.taskSummary.value,
+                    value = viewModel.taskDescription.value,
                     maxLines = 6,
                     onValueChange = {
-                        viewModel.updateTaskSummary(it)
+                        viewModel.updateTaskDescription(it)
                     },
                     label = { Text(stringResource(R.string.item_Details)) }
                 )
 
+
+                Button(onClick = {
+                    navigateToActivity = true
+                                 },
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .fillMaxWidth(),
+                    colors = buttonColors(containerColor = Purple200)
+                        
+
+                ) {
+
+                    Text(text = "Add your Location")
+                }
+                if (navigateToActivity) {
+                    // Use the BackHandler to clear the flag when navigating back
+                    BackHandler {
+                        navigateToActivity = false
+                    }
+                    // Launch the new activity using an Intent
+                    val intent = Intent(LocalContext.current, MapsActivity::class.java)
+                    LocalContext.current.startActivity(intent)
+
+                }
+
                 val priorities = PriorityLevel.values()
+
+                Text(text = "Expiry: ", Modifier.padding(4.dp))
                 ExposedDropdownMenuBox(
+
                     modifier = Modifier.padding(16.dp),
                     expanded = viewModel.expanded.value,
                     onExpandedChange = { viewModel.open() },

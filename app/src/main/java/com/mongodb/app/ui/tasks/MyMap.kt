@@ -149,7 +149,8 @@ fun MyMap(
         ) {
 
 
-            Button(onClick = onChangeMarkerIcon) {
+            Button(onClick = onChangeMarkerIcon)
+            {
                 Text(text = if (changeIcon) "Default Marker" else "Custom Marker")
             }
             Spacer(modifier = Modifier.width(4.dp))
@@ -216,6 +217,10 @@ fun MyMap(
 
 
                 }
+            }
+            //need to save the current location
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "Save My Location")
             }
         }
 

@@ -17,6 +17,7 @@ class Item() : RealmObject {
     var _id: ObjectId = ObjectId()
     var isComplete: Boolean = false
     var summary: String = ""
+    var description: String = ""
     var owner_id: String = ""
     var priority: Int = PriorityLevel.Soon.ordinal
 
@@ -30,6 +31,7 @@ class Item() : RealmObject {
         if (this._id != other._id) return false
         if (this.isComplete != other.isComplete) return false
         if (this.summary != other.summary) return false
+        if (this.description != other.description) return false
         if (this.owner_id != other.owner_id) return false
         return true
     }

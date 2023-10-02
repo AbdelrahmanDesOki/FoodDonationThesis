@@ -1,5 +1,6 @@
 package com.mongodb.app.presentation.tasks
 
+import android.app.ActivityManager.TaskDescription
 import com.mongodb.app.domain.PriorityLevel
 import android.os.Bundle
 import androidx.compose.runtime.MutableState
@@ -34,6 +35,10 @@ class AddItemViewModel(
     val taskSummary: State<String>
         get() = _taskSummary
 
+    private val _taskDescription: MutableState<String> = mutableStateOf("")
+    val taskDescription: State<String>
+        get()= _taskDescription
+
     private val _taskPriority: MutableState<PriorityLevel> = mutableStateOf(PriorityLevel.Soon)
     val taskPriority: State<PriorityLevel>
         get() = _taskPriority
@@ -58,6 +63,10 @@ class AddItemViewModel(
         _taskSummary.value = taskSummary
     }
 
+    fun updateTaskDescription(taskDescription: String){
+        _taskDescription.value = taskDescription
+    }
+
     fun updateTaskPriority(taskPriority: PriorityLevel) {
         _taskPriority.value = taskPriority
     }
@@ -71,7 +80,7 @@ class AddItemViewModel(
     fun addTask() {
         CoroutineScope(Dispatchers.IO).launch {
             runCatching {
-                repository.addTask(taskSummary.value, taskPriority.value)
+                repository.addTask(taskSummary.value, taskDescription.value,taskPriority.value)
             }.onSuccess {
                 withContext(Dispatchers.Main) {
                     _addItemEvent.emit(AddItemEvent.Info("Task '$taskSummary' with priority '$taskPriority' added successfully."))
@@ -87,9 +96,20 @@ class AddItemViewModel(
 
     private fun cleanUpAndClose() {
         _taskSummary.value = ""
+        _taskDescription.value = ""
         _taskPriority.value = PriorityLevel.Soon
         _addItemPopupVisible.value = false
     }
+
+
+
+
+
+
+
+
+
+
 
     companion object {
         fun factory(
