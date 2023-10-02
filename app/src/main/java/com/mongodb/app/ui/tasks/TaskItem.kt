@@ -1,18 +1,28 @@
 package com.mongodb.app.ui.tasks
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,6 +35,17 @@ import com.mongodb.app.presentation.tasks.TaskViewModel
 import com.mongodb.app.ui.theme.Blue
 import com.mongodb.app.ui.theme.MyApplicationTheme
 import kotlinx.coroutines.flow.MutableSharedFlow
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+
 
 @Composable
 fun TaskItem(
@@ -40,16 +61,27 @@ fun TaskItem(
             .height(80.dp)
     ) {
         // Guard against modifying some else's task - sync error callback would catch it though
-        Checkbox(
-            checked = task.isComplete,
-            onCheckedChange = {
-                if (taskViewModel.isTaskMine(task)) {
-                    taskViewModel.toggleIsComplete(task)
-                } else {
-                    taskViewModel.showPermissionsMessage()
-                }
-            }
-        )
+//        Checkbox(
+//            checked = task.isComplete,
+//            onCheckedChange = {
+//                if (taskViewModel.isTaskMine(task)) {
+//                    taskViewModel.toggleIsComplete(task)
+//                } else {
+//                    taskViewModel.showPermissionsMessage()
+//                }
+//            }
+//        )
+
+     Button(onClick = { /*TODO*/ },
+         modifier = Modifier
+             .padding( 6.dp)
+             .size(55.dp)
+
+     ) {
+         Text(text = "📩", Modifier.size(60.dp).fillMaxWidth().align(Alignment.CenterVertically))
+     }
+
+
         Column {
             Text(
                 text = task.summary,
