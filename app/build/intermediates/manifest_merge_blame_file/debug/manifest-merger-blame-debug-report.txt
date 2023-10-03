@@ -11,14 +11,14 @@
 9-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:6:5-67
-11-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:6:22-64
+11-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-12-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:7:5-81
-12-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:7:22-78
+12-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:6:5-81
+12-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-13-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:8:5-79
-13-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:8:22-76
+13-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:7:5-79
+13-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:7:22-76
 14
 15    <!-- Include required permissions for Google Maps API to run. -->
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -41,159 +41,198 @@
 25-->[com.google.android.gms:play-services-maps:18.1.0] /Users/admin/.gradle/caches/transforms-3/9f962e90279ada7e9052cb8a1b4480d4/transformed/play-services-maps-18.1.0/AndroidManifest.xml:33:18-61
 26    </queries>
 27
-28    <application
-28-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:10:5-43:19
-29        android:name="com.mongodb.app.TemplateApp"
-29-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:11:9-36
-30        android:allowBackup="true"
-30-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:12:9-35
-31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-31-->[androidx.core:core:1.8.0] /Users/admin/.gradle/caches/transforms-3/46134f55dcd895306dc1bdd32fb53a00/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
-32        android:debuggable="true"
-33        android:extractNativeLibs="false"
-34        android:icon="@mipmap/ic_launcher"
-34-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:13:9-43
-35        android:label="@string/app_name"
-35-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:14:9-41
-36        android:roundIcon="@mipmap/ic_launcher_round"
-36-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:15:9-54
-37        android:screenOrientation="portrait"
-37-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:17:9-45
-38        android:supportsRtl="true"
-38-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:16:9-35
-39        android:theme="@style/Theme.App" >
-39-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:18:9-41
-40        <activity
-40-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:20:9-24:48
-41            android:name="com.mongodb.app.MapsActivity"
-41-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:21:13-41
-42            android:exported="false"
-42-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:22:13-37
-43            android:label="@string/title_activity_maps"
-43-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:23:13-56
-44            android:theme="@style/Theme.App" />
-44-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:24:13-45
-45        <activity
-45-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:25:9-27:52
-46            android:name="com.mongodb.app.ComposeItemActivity"
-46-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:26:13-48
-47            android:screenOrientation="nosensor" />
-47-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:27:13-49
-48
-49        <meta-data
-49-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:29:9-31:71
-50            android:name="com.google.android.geo.API_KEY"
-50-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:30:13-58
-51            android:value="AIzaSyCMD-wynVqBBoknE3YGB3Ri-TV1pyutaL0" />
-51-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:31:13-68
-52
-53        <activity
-53-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:33:9-42:20
-54            android:name="com.mongodb.app.ComposeLoginActivity"
-54-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:34:13-49
-55            android:exported="true"
-55-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:36:13-36
-56            android:screenOrientation="nosensor" >
-56-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:35:13-49
-57            <intent-filter>
-57-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:37:13-41:29
-58                <action android:name="android.intent.action.MAIN" />
-58-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:38:17-69
-58-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:38:25-66
+28    <permission
+28-->[androidx.core:core:1.9.0] /Users/admin/.gradle/caches/transforms-3/057e0bf8d0c0229832eafdb67ae13993/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+29        android:name="com.mongodb.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+29-->[androidx.core:core:1.9.0] /Users/admin/.gradle/caches/transforms-3/057e0bf8d0c0229832eafdb67ae13993/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+30        android:protectionLevel="signature" />
+30-->[androidx.core:core:1.9.0] /Users/admin/.gradle/caches/transforms-3/057e0bf8d0c0229832eafdb67ae13993/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+31
+32    <uses-permission android:name="com.mongodb.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+32-->[androidx.core:core:1.9.0] /Users/admin/.gradle/caches/transforms-3/057e0bf8d0c0229832eafdb67ae13993/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+32-->[androidx.core:core:1.9.0] /Users/admin/.gradle/caches/transforms-3/057e0bf8d0c0229832eafdb67ae13993/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+33
+34    <application
+34-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:9:5-46:19
+35        android:name="com.mongodb.app.TemplateApp"
+35-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:10:9-36
+36        android:allowBackup="true"
+36-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:11:9-35
+37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+37-->[androidx.core:core:1.9.0] /Users/admin/.gradle/caches/transforms-3/057e0bf8d0c0229832eafdb67ae13993/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+38        android:debuggable="true"
+39        android:extractNativeLibs="false"
+40        android:icon="@mipmap/ic_launcher"
+40-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:12:9-43
+41        android:label="@string/app_name"
+41-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:13:9-41
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:14:9-54
+43        android:screenOrientation="portrait"
+43-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:15:9-45
+44        android:supportsRtl="true"
+44-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:16:9-35
+45        android:theme="@style/Theme.App" >
+45-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:17:9-41
+46        <activity
+46-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:18:9-22:48
+47            android:name="com.mongodb.app.ChatActivity"
+47-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:19:13-41
+48            android:exported="false"
+48-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:20:13-37
+49            android:label="@string/title_activity_chat"
+49-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:21:13-56
+50            android:theme="@style/Theme.App" />
+50-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:22:13-45
+51        <activity
+51-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:23:9-27:48
+52            android:name="com.mongodb.app.MapsActivity"
+52-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:24:13-41
+53            android:exported="false"
+53-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:25:13-37
+54            android:label="@string/title_activity_maps"
+54-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:26:13-56
+55            android:theme="@style/Theme.App" />
+55-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:27:13-45
+56        <activity
+56-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:28:9-30:52
+57            android:name="com.mongodb.app.ComposeItemActivity"
+57-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:29:13-48
+58            android:screenOrientation="nosensor" />
+58-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:30:13-49
 59
-60                <category android:name="android.intent.category.LAUNCHER" />
-60-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:40:17-77
-60-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:40:27-74
-61            </intent-filter>
-62        </activity>
-63        <activity
-63-->[androidx.compose.ui:ui-tooling:1.3.2] /Users/admin/.gradle/caches/transforms-3/ae0da2f1e45d39f827ccb0c28edfd85f/transformed/ui-tooling-1.3.2/AndroidManifest.xml:23:9-25:39
-64            android:name="androidx.compose.ui.tooling.PreviewActivity"
-64-->[androidx.compose.ui:ui-tooling:1.3.2] /Users/admin/.gradle/caches/transforms-3/ae0da2f1e45d39f827ccb0c28edfd85f/transformed/ui-tooling-1.3.2/AndroidManifest.xml:24:13-71
-65            android:exported="true" /> <!-- Needs to be explicitly declared on P+ -->
-65-->[androidx.compose.ui:ui-tooling:1.3.2] /Users/admin/.gradle/caches/transforms-3/ae0da2f1e45d39f827ccb0c28edfd85f/transformed/ui-tooling-1.3.2/AndroidManifest.xml:25:13-36
-66        <uses-library
-66-->[com.google.android.gms:play-services-maps:18.1.0] /Users/admin/.gradle/caches/transforms-3/9f962e90279ada7e9052cb8a1b4480d4/transformed/play-services-maps-18.1.0/AndroidManifest.xml:39:9-41:40
-67            android:name="org.apache.http.legacy"
-67-->[com.google.android.gms:play-services-maps:18.1.0] /Users/admin/.gradle/caches/transforms-3/9f962e90279ada7e9052cb8a1b4480d4/transformed/play-services-maps-18.1.0/AndroidManifest.xml:40:13-50
-68            android:required="false" />
-68-->[com.google.android.gms:play-services-maps:18.1.0] /Users/admin/.gradle/caches/transforms-3/9f962e90279ada7e9052cb8a1b4480d4/transformed/play-services-maps-18.1.0/AndroidManifest.xml:41:13-37
-69
-70        <activity
-70-->[com.google.android.gms:play-services-base:18.1.0] /Users/admin/.gradle/caches/transforms-3/671ed566308078877a6272194fed3f0b/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
-71            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-71-->[com.google.android.gms:play-services-base:18.1.0] /Users/admin/.gradle/caches/transforms-3/671ed566308078877a6272194fed3f0b/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
-72            android:exported="false"
-72-->[com.google.android.gms:play-services-base:18.1.0] /Users/admin/.gradle/caches/transforms-3/671ed566308078877a6272194fed3f0b/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
-73            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-73-->[com.google.android.gms:play-services-base:18.1.0] /Users/admin/.gradle/caches/transforms-3/671ed566308078877a6272194fed3f0b/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
-74
-75        <meta-data
-75-->[com.google.android.gms:play-services-basement:18.1.0] /Users/admin/.gradle/caches/transforms-3/dba76e9d6e291f320c0de87b0fbf140d/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
-76            android:name="com.google.android.gms.version"
-76-->[com.google.android.gms:play-services-basement:18.1.0] /Users/admin/.gradle/caches/transforms-3/dba76e9d6e291f320c0de87b0fbf140d/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
-77            android:value="@integer/google_play_services_version" />
-77-->[com.google.android.gms:play-services-basement:18.1.0] /Users/admin/.gradle/caches/transforms-3/dba76e9d6e291f320c0de87b0fbf140d/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
-78
-79        <provider
-79-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:27:9-35:20
-80            android:name="androidx.startup.InitializationProvider"
-80-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:28:13-67
-81            android:authorities="com.mongodb.app.androidx-startup"
-81-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:29:13-68
-82            android:exported="false" >
-82-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:30:13-37
-83            <meta-data
-83-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:32:13-34:52
-84                android:name="io.realm.kotlin.internal.RealmInitializer"
-84-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:33:17-73
-85                android:value="androidx.startup" />
-85-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:34:17-49
-86            <meta-data
-86-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:30:13-32:52
-87                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-87-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:31:17-85
-88                android:value="androidx.startup" />
-88-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:32:17-49
-89            <meta-data
-89-->[androidx.emoji2:emoji2:1.2.0] /Users/admin/.gradle/caches/transforms-3/bb75d41cf74b14614075adc5fe68ffc2/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-90                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-90-->[androidx.emoji2:emoji2:1.2.0] /Users/admin/.gradle/caches/transforms-3/bb75d41cf74b14614075adc5fe68ffc2/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-91                android:value="androidx.startup" />
-91-->[androidx.emoji2:emoji2:1.2.0] /Users/admin/.gradle/caches/transforms-3/bb75d41cf74b14614075adc5fe68ffc2/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-92            <meta-data
-92-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/admin/.gradle/caches/transforms-3/8c6cfe2cbb08dc59a38540c519d25747/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-93                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-93-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/admin/.gradle/caches/transforms-3/8c6cfe2cbb08dc59a38540c519d25747/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-94                android:value="androidx.startup" />
-94-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/admin/.gradle/caches/transforms-3/8c6cfe2cbb08dc59a38540c519d25747/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-95        </provider>
-96
-97        <receiver
-97-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:35:9-47:20
-98            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-98-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:36:13-76
-99            android:directBootAware="false"
-99-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:37:13-44
-100            android:enabled="true"
-100-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:38:13-35
-101            android:exported="true"
-101-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:39:13-36
-102            android:permission="android.permission.DUMP" >
-102-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:40:13-57
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:41:13-43:29
-104                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:42:17-91
-104-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:42:25-88
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:44:13-46:29
-107                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-107-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:45:17-85
-107-->[androidx.profileinstaller:profileinstaller:1.2.0] /Users/admin/.gradle/caches/transforms-3/0881217810a5959dd8cf3a3f9dd5a557/transformed/profileinstaller-1.2.0/AndroidManifest.xml:45:25-82
-108            </intent-filter>
-109        </receiver>
-110    </application>
-111
-112</manifest>
+60        <meta-data
+60-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:32:9-34:71
+61            android:name="com.google.android.geo.API_KEY"
+61-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:33:13-58
+62            android:value="AIzaSyCMD-wynVqBBoknE3YGB3Ri-TV1pyutaL0" />
+62-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:34:13-68
+63
+64        <activity
+64-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:36:9-45:20
+65            android:name="com.mongodb.app.ComposeLoginActivity"
+65-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:37:13-49
+66            android:exported="true"
+66-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:38:13-36
+67            android:screenOrientation="nosensor" >
+67-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:39:13-49
+68            <intent-filter>
+68-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:40:13-44:29
+69                <action android:name="android.intent.action.MAIN" />
+69-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:41:17-69
+69-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:41:25-66
+70
+71                <category android:name="android.intent.category.LAUNCHER" />
+71-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:43:17-77
+71-->/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:43:27-74
+72            </intent-filter>
+73        </activity>
+74        <activity
+74-->[androidx.compose.ui:ui-test-manifest:1.4.0] /Users/admin/.gradle/caches/transforms-3/2b468b9185c415001391196b032c5b0c/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:23:9-25:39
+75            android:name="androidx.activity.ComponentActivity"
+75-->[androidx.compose.ui:ui-test-manifest:1.4.0] /Users/admin/.gradle/caches/transforms-3/2b468b9185c415001391196b032c5b0c/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:24:13-63
+76            android:exported="true" />
+76-->[androidx.compose.ui:ui-test-manifest:1.4.0] /Users/admin/.gradle/caches/transforms-3/2b468b9185c415001391196b032c5b0c/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:25:13-36
+77        <activity
+77-->[androidx.compose.ui:ui-tooling:1.4.0] /Users/admin/.gradle/caches/transforms-3/61b7e8de9b1129f86bf491d12fc4c85f/transformed/ui-tooling-1.4.0/AndroidManifest.xml:23:9-25:39
+78            android:name="androidx.compose.ui.tooling.PreviewActivity"
+78-->[androidx.compose.ui:ui-tooling:1.4.0] /Users/admin/.gradle/caches/transforms-3/61b7e8de9b1129f86bf491d12fc4c85f/transformed/ui-tooling-1.4.0/AndroidManifest.xml:24:13-71
+79            android:exported="true" /> <!-- Needs to be explicitly declared on P+ -->
+79-->[androidx.compose.ui:ui-tooling:1.4.0] /Users/admin/.gradle/caches/transforms-3/61b7e8de9b1129f86bf491d12fc4c85f/transformed/ui-tooling-1.4.0/AndroidManifest.xml:25:13-36
+80        <uses-library
+80-->[com.google.android.gms:play-services-maps:18.1.0] /Users/admin/.gradle/caches/transforms-3/9f962e90279ada7e9052cb8a1b4480d4/transformed/play-services-maps-18.1.0/AndroidManifest.xml:39:9-41:40
+81            android:name="org.apache.http.legacy"
+81-->[com.google.android.gms:play-services-maps:18.1.0] /Users/admin/.gradle/caches/transforms-3/9f962e90279ada7e9052cb8a1b4480d4/transformed/play-services-maps-18.1.0/AndroidManifest.xml:40:13-50
+82            android:required="false" />
+82-->[com.google.android.gms:play-services-maps:18.1.0] /Users/admin/.gradle/caches/transforms-3/9f962e90279ada7e9052cb8a1b4480d4/transformed/play-services-maps-18.1.0/AndroidManifest.xml:41:13-37
+83
+84        <activity
+84-->[com.google.android.gms:play-services-base:18.1.0] /Users/admin/.gradle/caches/transforms-3/671ed566308078877a6272194fed3f0b/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+85            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+85-->[com.google.android.gms:play-services-base:18.1.0] /Users/admin/.gradle/caches/transforms-3/671ed566308078877a6272194fed3f0b/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+86            android:exported="false"
+86-->[com.google.android.gms:play-services-base:18.1.0] /Users/admin/.gradle/caches/transforms-3/671ed566308078877a6272194fed3f0b/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+87            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+87-->[com.google.android.gms:play-services-base:18.1.0] /Users/admin/.gradle/caches/transforms-3/671ed566308078877a6272194fed3f0b/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+88
+89        <meta-data
+89-->[com.google.android.gms:play-services-basement:18.1.0] /Users/admin/.gradle/caches/transforms-3/dba76e9d6e291f320c0de87b0fbf140d/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+90            android:name="com.google.android.gms.version"
+90-->[com.google.android.gms:play-services-basement:18.1.0] /Users/admin/.gradle/caches/transforms-3/dba76e9d6e291f320c0de87b0fbf140d/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+91            android:value="@integer/google_play_services_version" />
+91-->[com.google.android.gms:play-services-basement:18.1.0] /Users/admin/.gradle/caches/transforms-3/dba76e9d6e291f320c0de87b0fbf140d/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+92
+93        <provider
+93-->[androidx.emoji2:emoji2:1.3.0] /Users/admin/.gradle/caches/transforms-3/9c84c53888981fc0a9ffa88a1a204878/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+94            android:name="androidx.startup.InitializationProvider"
+94-->[androidx.emoji2:emoji2:1.3.0] /Users/admin/.gradle/caches/transforms-3/9c84c53888981fc0a9ffa88a1a204878/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+95            android:authorities="com.mongodb.app.androidx-startup"
+95-->[androidx.emoji2:emoji2:1.3.0] /Users/admin/.gradle/caches/transforms-3/9c84c53888981fc0a9ffa88a1a204878/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+96            android:exported="false" >
+96-->[androidx.emoji2:emoji2:1.3.0] /Users/admin/.gradle/caches/transforms-3/9c84c53888981fc0a9ffa88a1a204878/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+97            <meta-data
+97-->[androidx.emoji2:emoji2:1.3.0] /Users/admin/.gradle/caches/transforms-3/9c84c53888981fc0a9ffa88a1a204878/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+98-->[androidx.emoji2:emoji2:1.3.0] /Users/admin/.gradle/caches/transforms-3/9c84c53888981fc0a9ffa88a1a204878/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+99                android:value="androidx.startup" />
+99-->[androidx.emoji2:emoji2:1.3.0] /Users/admin/.gradle/caches/transforms-3/9c84c53888981fc0a9ffa88a1a204878/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+100            <meta-data
+100-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/admin/.gradle/caches/transforms-3/0fdb03003d3e304e0320bf41803766e0/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+101                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+101-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/admin/.gradle/caches/transforms-3/0fdb03003d3e304e0320bf41803766e0/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+102                android:value="androidx.startup" />
+102-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/admin/.gradle/caches/transforms-3/0fdb03003d3e304e0320bf41803766e0/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+103            <meta-data
+103-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:32:13-34:52
+104                android:name="io.realm.kotlin.internal.RealmInitializer"
+104-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:33:17-73
+105                android:value="androidx.startup" />
+105-->[io.realm.kotlin:cinterop-android:1.8.0] /Users/admin/.gradle/caches/transforms-3/914a5494af643434d6b7275f97158c57/transformed/cinterop-release/AndroidManifest.xml:34:17-49
+106            <meta-data
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+108                android:value="androidx.startup" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+109        </provider>
+110
+111        <receiver
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+112            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+113            android:directBootAware="false"
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+114            android:enabled="true"
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+115            android:exported="true"
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+116            android:permission="android.permission.DUMP" >
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+117            <intent-filter>
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+118                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+119            </intent-filter>
+120            <intent-filter>
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+121                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+122            </intent-filter>
+123            <intent-filter>
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+124                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+124-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+124-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+125            </intent-filter>
+126            <intent-filter>
+126-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+127                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/admin/.gradle/caches/transforms-3/b5aca77be131d68d38740ff0f176e331/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+128            </intent-filter>
+129        </receiver>
+130    </application>
+131
+132</manifest>

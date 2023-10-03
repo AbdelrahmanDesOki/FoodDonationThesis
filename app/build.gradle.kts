@@ -12,6 +12,9 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
     buildTypes {
         getByName("release") {
@@ -23,6 +26,18 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.3.2"
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
@@ -52,6 +67,11 @@ dependencies {
     implementation("com.google.android.gms:play-services-location:21.0.1")
     //google maps utils
     implementation("com.google.maps.android:android-maps-utils:3.4.0")
+    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation("androidx.compose.ui:ui-graphics")
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
 
 //    implementation ("androidx.compose.material2:material-icons-extended:1.0.0-beta01")
 //    implementation ("androidx.compose.material:material:1.5.2")

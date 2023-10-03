@@ -28,4 +28,5 @@
     <string name="dataExplorerLink" />
     <string name="item_priority" />
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_chat">ChatActivity</string>
 </resources>

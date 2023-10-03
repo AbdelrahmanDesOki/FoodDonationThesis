@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-60:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-63:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/0c78a73c58790dcdc3275ae050e25834/transformed/appcompat-1.5.1/res/values-ldltr-v21/values-ldltr-v21.xml",

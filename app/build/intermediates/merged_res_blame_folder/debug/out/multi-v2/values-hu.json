@@ -1,40 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-60:/values-hu/values-hu.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-63:/values-hu/values-hu.xml",
             "map": [
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-3/46134f55dcd895306dc1bdd32fb53a00/transformed/core-1.8.0/res/values-hu/values-hu.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-3/5a73d7533b253b7ea7fcccbb7156f382/transformed/ui-1.4.0/res/values-hu/values-hu.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,288,385,484,571,653,749,838,925,989,1053,1136,1224,1298,1377,1443",
+                        "endColumns": "94,87,96,98,86,81,95,88,86,63,63,82,87,73,78,65,120",
+                        "endOffsets": "195,283,380,479,566,648,744,833,920,984,1048,1131,1219,1293,1372,1438,1559"
                     },
                     "to": {
-                        "startLines": "126",
-                        "startColumns": "4",
-                        "startOffsets": "11555",
-                        "endColumns": "100",
-                        "endOffsets": "11651"
-                    }
-                },
-                {
-                    "source": "/Users/admin/.gradle/caches/transforms-3/5f1dc02c8b8ade5f696416b9340ff26d/transformed/ui-1.3.2/res/values-hu/values-hu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,288,385,484,571,653,749,838,925,989,1053,1136,1224,1298,1364",
-                        "endColumns": "94,87,96,98,86,81,95,88,86,63,63,82,87,73,65,120",
-                        "endOffsets": "195,283,380,479,566,648,744,833,920,984,1048,1131,1219,1293,1359,1480"
-                    },
-                    "to": {
-                        "startLines": "37,38,58,59,61,66,67,117,118,119,120,122,123,125,127,128",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3446,3541,6137,6234,6413,6814,6896,10837,10926,11013,11077,11226,11309,11481,11656,11722",
-                        "endColumns": "94,87,96,98,86,81,95,88,86,63,63,82,87,73,65,120",
-                        "endOffsets": "3536,3624,6229,6328,6495,6891,6987,10921,11008,11072,11136,11304,11392,11550,11717,11838"
+                        "startLines": "37,38,58,59,61,66,67,117,118,119,120,122,123,125,127,128,129",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3446,3541,6137,6234,6413,6814,6896,10837,10926,11013,11077,11226,11309,11481,11656,11735,11801",
+                        "endColumns": "94,87,96,98,86,81,95,88,86,63,63,82,87,73,78,65,120",
+                        "endOffsets": "3536,3624,6229,6328,6495,6891,6987,10921,11008,11072,11136,11304,11392,11550,11730,11796,11917"
                     }
                 },
                 {
@@ -122,6 +105,23 @@
                         "startOffsets": "3709,3820,4004,4142,4251,4419,4557,4679,4966,5136,5244,5429,5566,5738,5910,5981,6049",
                         "endColumns": "110,183,137,108,167,137,121,109,169,107,184,136,171,171,70,67,87",
                         "endOffsets": "3815,3999,4137,4246,4414,4552,4674,4784,5131,5239,5424,5561,5733,5905,5976,6044,6132"
+                    }
+                },
+                {
+                    "source": "/Users/admin/.gradle/caches/transforms-3/057e0bf8d0c0229832eafdb67ae13993/transformed/core-1.9.0/res/values-hu/values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "126",
+                        "startColumns": "4",
+                        "startOffsets": "11555",
+                        "endColumns": "100",
+                        "endOffsets": "11651"
                     }
                 }
             ]

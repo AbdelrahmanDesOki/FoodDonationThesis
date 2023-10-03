@@ -51,6 +51,7 @@ string realm_data_source_name
 string show_all_tasks
 string show_completed_tasks_only
 string sync_message
+string title_activity_chat
 string title_activity_maps
 string unable_to_switch
 style Theme.App
