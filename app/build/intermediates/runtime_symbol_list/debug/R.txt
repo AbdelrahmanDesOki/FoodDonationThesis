@@ -3066,7 +3066,6 @@ int id progress_horizontal 0x7f08015f
 int id radio 0x7f080160
 int id ratio 0x7f080161
 int id rectangles 0x7f080162
-int id report_drawn 0x7f080163
 int id reverseSawtooth 0x7f080164
 int id right 0x7f080165
 int id rightToLeft 0x7f080166
@@ -3621,7 +3620,6 @@ int string selected 0x7f0f00cc
 int string show_all_tasks 0x7f0f00cd
 int string show_completed_tasks_only 0x7f0f00ce
 int string status_bar_notification_info_overflow 0x7f0f00cf
-int string switch_role 0x7f0f00d0
 int string sync_message 0x7f0f00d1
 int string tab 0x7f0f00d2
 int string template_percent 0x7f0f00d3

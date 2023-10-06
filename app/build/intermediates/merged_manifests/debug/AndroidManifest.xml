@@ -25,12 +25,6 @@
         <package android:name="com.google.android.apps.maps" />
     </queries>
 
-    <permission
-        android:name="com.mongodb.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.mongodb.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-
     <application
         android:name="com.mongodb.app.TemplateApp"
         android:allowBackup="true"
@@ -42,6 +36,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.App" >
         <activity
             android:name="com.mongodb.app.ChatActivity"
@@ -72,9 +67,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="androidx.activity.ComponentActivity"
-            android:exported="true" />
-        <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" /> <!-- Needs to be explicitly declared on P+ -->
         <uses-library
@@ -95,16 +87,16 @@
             android:authorities="com.mongodb.app.androidx-startup"
             android:exported="false" >
             <meta-data
-                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-                android:value="androidx.startup" />
-            <meta-data
                 android:name="io.realm.kotlin.internal.RealmInitializer"
                 android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
                 android:value="androidx.startup" />
         </provider>
 
@@ -119,12 +111,6 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
         </receiver>
     </application>

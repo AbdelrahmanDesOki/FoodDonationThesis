@@ -15,7 +15,7 @@ import com.google.maps.android.compose.MapProperties
 fun MapScreen(context: Context) {
 
     var showMap by remember { mutableStateOf(false) }
-    var location by remember { mutableStateOf(LatLng(0.0, 0.0)) }
+    var location by remember { mutableStateOf(LatLng(47.4734, 19.0599)) }
     var mapProperties by remember { mutableStateOf(MapProperties()) }
     var changeIcon by remember { mutableStateOf(false) }
     var lineType by remember {

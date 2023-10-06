@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-63:/values-v16/values-v16.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-60:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-3/057e0bf8d0c0229832eafdb67ae13993/transformed/core-1.9.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-3/46134f55dcd895306dc1bdd32fb53a00/transformed/core-1.8.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,6 +1,12 @@
 package com.mongodb.app.ui.tasks
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
+import android.location.Location
+import android.util.Log
 import androidx.appcompat.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -31,6 +37,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.app.ActivityCompat
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.GoogleMap
@@ -41,6 +49,8 @@ import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.Polygon
 import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.rememberCameraPositionState
+import java.io.IOException
+import java.util.Locale
 
 
 @Composable
@@ -49,7 +59,7 @@ fun MyMap(
     latLng: LatLng,
     changeIcon: Boolean = false,
     lineType: LineType? = null,
-    mapProperties: MapProperties = MapProperties(),
+    mapProperties: MapProperties = MapProperties(isMyLocationEnabled = true),
     onChangeMarkerIcon: () -> Unit,
     onChangeMapType: (mapType: MapType) -> Unit,
     onChangeLineType: (lineType: LineType?) -> Unit,
@@ -75,8 +85,9 @@ fun MyMap(
 
 //    val Loc =  Text(text = "Current Location is:" + getCurrentLocation(
 //        this).toString())
+    var markerLocation = LatLng(latlangList[0].latitude, latlangList[0].longitude)
+    var locationAsString = "Latitude: ${markerLocation.latitude}, Longitude: ${markerLocation.longitude}"
 
-    var address: String? = null
 
 
 
@@ -90,44 +101,20 @@ fun MyMap(
                 if (lineType == null) {
                     latlangList.add(it)
                 }
-
-//                val geocoder: Geocoder
-//                val addresses: List<Address>?
-//                geocoder = Geocoder(context, java.util.Locale.getDefault())
-//
-//                addresses = geocoder.getFromLocation(
-//                    latLng.latitude,
-//                    latLng.longitude,
-//                    1
-//                )
-//                 address = addresses!![0].getAddressLine(0)
-
-
-
             }
         ) {
 
-//            address?.let {
-//                Text(text = it,
-//                modifier = Modifier
-//                    .align(Alignment.BottomStart)
-//                    .background(Color.White)
-//                    .size(5.dp)
-//            )
-//            }
 
             latlangList.toList().forEach {
                 Marker(
+
                     state = MarkerState(position = it),
                     title = "Location",
-                    snippet = "Marker in current location",
+                    snippet = getAddressFromLocation(context,markerLocation.latitude, markerLocation.longitude ),
                     icon = if (changeIcon) {
                         bitmapDescriptor(context, R.drawable.abc_btn_radio_material)
                     } else null
                 )
-
-
-
             }
 
             if (lineType == LineType.POLYLINE) {
@@ -258,3 +245,32 @@ fun MyMap(
 //
 //    return  address?.get(0)?.getAddressLine(0).toString()
 //}
+
+
+fun getAddressFromLocation(context: Context, latitude: Double, longitude: Double): String {
+    val geocoder = Geocoder(context, Locale.getDefault())
+    var result = ""
+
+    try {
+        val addresses: List<Address>? = geocoder.getFromLocation(latitude, longitude, 1)
+
+        if (addresses != null && addresses.isNotEmpty()) {
+            val address: Address = addresses[0]
+
+            // Build the result string by concatenating address components
+            val addressStringBuilder = StringBuilder()
+            for (i in 0..address.maxAddressLineIndex) {
+                addressStringBuilder.append(address.getAddressLine(i))
+                if (i < address.maxAddressLineIndex) {
+                    addressStringBuilder.append(", ")
+                }
+            }
+
+            result = addressStringBuilder.toString()
+        }
+    } catch (e: IOException) {
+        e.printStackTrace()
+    }
+
+    return result
+}

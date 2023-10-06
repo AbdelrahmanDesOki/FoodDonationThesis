@@ -52,6 +52,7 @@ fun calculateSurfaceArea(latlngList: List<LatLng>): Double {
 fun formattedValue(value: Double) = String.format("%.2f",value)
 
 
+
 @SuppressLint("MissingPermission")
 fun getCurrentLocation(context: Context, onLocationFetched: (location: LatLng) -> Unit) {
     var loc: LatLng
