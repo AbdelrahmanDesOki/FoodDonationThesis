@@ -171,16 +171,6 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/admi
 		ADDED from /Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:17:9-41
 	android:name
 		ADDED from /Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:10:9-36
-activity#com.mongodb.app.ChatActivity
-ADDED from /Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:18:9-22:48
-	android:label
-		ADDED from /Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:21:13-56
-	android:exported
-		ADDED from /Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:20:13-37
-	android:theme
-		ADDED from /Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:22:13-45
-	android:name
-		ADDED from /Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:19:13-41
 activity#com.mongodb.app.MapsActivity
 ADDED from /Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/src/main/AndroidManifest.xml:23:9-27:48
 	android:label
