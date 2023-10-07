@@ -6,9 +6,9 @@ import io.realm.kotlin.types.annotations.PrimaryKey
 
 
 enum class PriorityLevel() {
-    Soon,
-    Week,
+    Tonight,
     Tomorrow,
+    Week,
     Month
 }
 
@@ -19,7 +19,8 @@ class Item() : RealmObject {
     var summary: String = ""
     var description: String = ""
     var owner_id: String = ""
-    var priority: Int = PriorityLevel.Soon.ordinal
+    var priority: Int = PriorityLevel.Tonight.ordinal
+    var Location: String = ""
 
     constructor(ownerId: String = "") : this() {
         owner_id = ownerId
@@ -32,6 +33,7 @@ class Item() : RealmObject {
         if (this.isComplete != other.isComplete) return false
         if (this.summary != other.summary) return false
         if (this.description != other.description) return false
+        if (this.Location != other.Location) return false
         if (this.owner_id != other.owner_id) return false
         return true
     }

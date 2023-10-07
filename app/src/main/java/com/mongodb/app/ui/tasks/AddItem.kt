@@ -29,7 +29,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.core.content.ContextCompat.startActivity
+import com.mongodb.app.ComposeItemActivity
 import com.mongodb.app.ComposeLoginActivity
 import com.mongodb.app.MapsActivity
 import com.mongodb.app.R
@@ -96,11 +98,19 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                     }
                     // Launch the new activity using an Intent
                     val intent = Intent(LocalContext.current, MapsActivity::class.java)
+//                    startActivityForResult(MapsActivity, 101)
                     LocalContext.current.startActivity(intent)
+//                    viewModel.Location_.value.equals()
 
                 }
 
                 val priorities = PriorityLevel.values()
+                val intent = Intent(LocalContext.current,ComposeItemActivity::class.java)
+                val receivedMessage = intent.getStringExtra("EXTRA_MESSAGE")
+                if (receivedMessage != null) {
+                    Text(text =receivedMessage)
+                    viewModel.Location_.value
+                }
 
                 Text(text = "Expiry: ", Modifier.padding(4.dp))
                 ExposedDropdownMenuBox(

@@ -2,6 +2,7 @@ package com.mongodb.app.ui.tasks
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
@@ -35,6 +36,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
@@ -49,6 +51,9 @@ import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.Polygon
 import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.rememberCameraPositionState
+import com.mongodb.app.MapsActivity
+import com.mongodb.app.data.SyncRepository
+import com.mongodb.app.presentation.tasks.AddItemViewModel
 import java.io.IOException
 import java.util.Locale
 
@@ -63,6 +68,7 @@ fun MyMap(
     onChangeMarkerIcon: () -> Unit,
     onChangeMapType: (mapType: MapType) -> Unit,
     onChangeLineType: (lineType: LineType?) -> Unit,
+//    viewModel:AddItemViewModel
 ) {
     val latlangList = remember {
         mutableStateListOf(latLng)
@@ -86,7 +92,12 @@ fun MyMap(
 //    val Loc =  Text(text = "Current Location is:" + getCurrentLocation(
 //        this).toString())
     var markerLocation = LatLng(latlangList[0].latitude, latlangList[0].longitude)
-    var locationAsString = "Latitude: ${markerLocation.latitude}, Longitude: ${markerLocation.longitude}"
+    var locationAsString = getAddressFromLocation(context,markerLocation.latitude, markerLocation.longitude )
+    val intent = Intent(LocalContext.current, MapsActivity::class.java)
+    intent.putExtra("EXTRA_MESSAGE", locationAsString)
+//    AddItemPrompt(viewModel = AddItemViewModel(SyncRepository), location =locationAsString)
+//        "Latitude: ${markerLocation.latitude}, Longitude: ${markerLocation.longitude}"
+
 
 
 
@@ -206,7 +217,13 @@ fun MyMap(
                 }
             }
             //need to save the current location
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = {
+//                viewModel.Location_.value.equals(locationAsString)
+                locationAsString = getAddressFromLocation(context,markerLocation.latitude, markerLocation.longitude )
+                intent.putExtra("EXTRA_MESSAGE", locationAsString)
+               //need to close the maps activity here
+            }) {
+
                 Text(text = "Save My Location")
             }
         }

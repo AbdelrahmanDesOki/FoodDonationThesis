@@ -9,13 +9,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.MapProperties
+import com.mongodb.app.data.MockRepository
+import com.mongodb.app.data.SyncRepository
+import com.mongodb.app.presentation.tasks.AddItemViewModel
 
 
 @Composable
 fun MapScreen(context: Context) {
 
     var showMap by remember { mutableStateOf(false) }
-    var location by remember { mutableStateOf(LatLng(47.4734, 19.0599)) }
+    var location by remember { mutableStateOf(LatLng(47.4733781,19.059865)) }
     var mapProperties by remember { mutableStateOf(MapProperties()) }
     var changeIcon by remember { mutableStateOf(false) }
     var lineType by remember {
@@ -42,7 +45,11 @@ fun MapScreen(context: Context) {
                 mapProperties = mapProperties.copy(mapType = it)
             }, onChangeLineType = {
                 lineType = it
-            })
+            },
+
+//            viewModel = AddItemViewModel(repository = SyncRepository)
+
+            )
     }
     else{
         Text(text = "Loading the MAp")

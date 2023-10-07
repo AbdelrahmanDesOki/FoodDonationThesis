@@ -39,7 +39,11 @@ class AddItemViewModel(
     val taskDescription: State<String>
         get()= _taskDescription
 
-    private val _taskPriority: MutableState<PriorityLevel> = mutableStateOf(PriorityLevel.Soon)
+    private val _Location: MutableState<String> = mutableStateOf("")
+    val Location_: State<String>
+        get()= _Location
+
+    private val _taskPriority: MutableState<PriorityLevel> = mutableStateOf(PriorityLevel.Tonight)
     val taskPriority: State<PriorityLevel>
         get() = _taskPriority
 
@@ -80,7 +84,7 @@ class AddItemViewModel(
     fun addTask() {
         CoroutineScope(Dispatchers.IO).launch {
             runCatching {
-                repository.addTask(taskSummary.value, taskDescription.value,taskPriority.value)
+                repository.addTask(taskSummary.value, taskDescription.value,taskPriority.value, Location_.value)
             }.onSuccess {
                 withContext(Dispatchers.Main) {
                     _addItemEvent.emit(AddItemEvent.Info("Task '$taskSummary' with priority '$taskPriority' added successfully."))
@@ -97,7 +101,8 @@ class AddItemViewModel(
     private fun cleanUpAndClose() {
         _taskSummary.value = ""
         _taskDescription.value = ""
-        _taskPriority.value = PriorityLevel.Soon
+        _Location.value = ""
+        _taskPriority.value = PriorityLevel.Tonight
         _addItemPopupVisible.value = false
     }
 
