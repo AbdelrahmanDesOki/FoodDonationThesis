@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="blue">#FF387CAC</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#FF7A44E4</color>
+    <color name="colorPrimaryDark">#FF5824E4</color>
+    <color name="dark_blue">#FF18344C</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <item name="action_delete" type="id"/>
+    <string name="account_clarification">Please log in or register with a Device Sync user account. This is separate from your Atlas Cloud login.</string>
+    <string name="add_item">Add Item</string>
+    <string name="airplane_mode">Airplane Mode</string>
+    <string name="already_have_account">Already have an account? Log in</string>
+    <string name="app_name">FoodDonation App</string>
+    <string name="cancel">Cancel</string>
+    <string name="create">Create</string>
+    <string name="create_account">Create Account</string>
+    <string name="dataExplorerLink"/>
+    <string name="delete">Delete</string>
+    <string name="does_not_have_account">Don\'t have an account? Create account</string>
+    <string name="enter_item_name">Enter Item Name:</string>
+    <string name="item_Details">Item Details</string>
+    <string name="item_priority"/>
+    <string name="item_summary">Item Name</string>
+    <string name="log_in">Log In</string>
+    <string name="log_out">Log Out</string>
+    <string name="mine">Food Description</string>
+    <string name="more">\u22EE</string>
+    <string name="permissions_error">You are not allowed to delete or modify tasks that don\'t belong to you.</string>
+    <string name="permissions_warning">You can only modify or remove tasks that belong to you.</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="realm_app_id">application-0-cbggc</string>
+    <string name="realm_app_url">https://realm.mongodb.com/groups/6511ecba6ec1270fac244353/apps/6511ed25f2e446a49ce38344</string>
+    <string name="realm_base_url">https://realm.mongodb.com</string>
+    <string name="realm_client_api_base_url">https://eu-central-1.aws.realm.mongodb.com</string>
+    <string name="realm_data_api_base_url">https://eu-central-1.aws.data.mongodb-api.com</string>
+    <string name="realm_data_explorer_link">https://cloud.mongodb.com/links/6511ecba6ec1270fac244353/explorer/AtlasCluster/database/collection/find</string>
+    <string name="realm_data_source_name">mongodb-atlas</string>
+    <string name="show_all_tasks">Show all tasks</string>
+    <string name="show_completed_tasks_only">Show completed tasks only</string>
+    <string name="sync_message">Log in with the same account on another device or simulator to see your list sync in real-time.</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="unable_to_switch">Switching subscriptions does not affect Realm data when Sync is offline</string>
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>

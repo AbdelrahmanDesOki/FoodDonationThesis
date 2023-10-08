@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("io.realm.kotlin") version "1.8.0"
+    id("com.google.gms.google-services")
+
 }
 
 android {
@@ -66,6 +68,7 @@ dependencies {
     //google maps services
     implementation("com.google.android.gms:play-services-maps:18.1.0")
     implementation("com.google.android.gms:play-services-location:21.0.1")
+
     //google maps utils
     implementation("com.google.maps.android:android-maps-utils:3.4.0")
 //    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
@@ -76,5 +79,15 @@ dependencies {
 
 //    implementation ("androidx.compose.material2:material-icons-extended:1.0.0-beta01")
 //    implementation ("androidx.compose.material:material:1.5.2")
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation ("com.google.firebase:firebase-auth-ktx")
+    implementation ("com.google.firebase:firebase-firestore-ktx")
+
+
 
 }
