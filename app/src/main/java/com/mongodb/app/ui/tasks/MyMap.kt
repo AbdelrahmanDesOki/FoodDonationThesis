@@ -222,7 +222,8 @@ fun MyMap(
                 locationAsString = getAddressFromLocation(context,markerLocation.latitude, markerLocation.longitude )
                 intent.putExtra("EXTRA_MESSAGE", locationAsString)
                //need to close the maps activity here
-            }) {
+            },
+                ) {
 
                 Text(text = "Save My Location")
             }

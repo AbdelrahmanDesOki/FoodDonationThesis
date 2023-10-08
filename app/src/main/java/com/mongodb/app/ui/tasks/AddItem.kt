@@ -97,9 +97,10 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                         navigateToActivity = false
                     }
                     // Launch the new activity using an Intent
-                    val intent = Intent(LocalContext.current, MapsActivity::class.java)
+                    var intent = Intent(LocalContext.current, MapsActivity::class.java)
 //                    startActivityForResult(MapsActivity, 101)
                     LocalContext.current.startActivity(intent)
+//                    LocalContext.current.
 //                    viewModel.Location_.value.equals()
 
                 }
@@ -110,6 +111,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                 if (receivedMessage != null) {
                     Text(text =receivedMessage)
                     viewModel.Location_.value
+//                    LocalContext.current.stopService(Intent(LocalContext.current, MapsActivity::class.java))
                 }
 
                 Text(text = "Expiry: ", Modifier.padding(4.dp))
