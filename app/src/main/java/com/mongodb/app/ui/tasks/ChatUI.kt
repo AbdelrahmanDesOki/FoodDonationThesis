@@ -35,6 +35,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
  * And also give an option to send a message and logout.
  */
 
+//Need to test it and connect it very well to the user.
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeView(

@@ -14,7 +14,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.firebase.auth.FirebaseAuth
 import com.mongodb.app.ui.tasks.CheckForPermission
+import com.mongodb.app.ui.tasks.HomeView
 import com.mongodb.app.ui.tasks.LocationPermissionScreen
 import com.mongodb.app.ui.tasks.MapScreen
 import com.mongodb.app.ui.theme.GoogleMapsTheme
@@ -26,6 +28,11 @@ class MapsActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
+
+
+
+
+
                 GoogleMapsTheme {
                     Surface(
                         modifier = Modifier.fillMaxSize(),

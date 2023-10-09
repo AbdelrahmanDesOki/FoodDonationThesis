@@ -81,13 +81,17 @@ dependencies {
 //    implementation ("androidx.compose.material:material:1.5.2")
 
     // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    implementation(platform("com.google.firebase:firebase-bom:28.3.0"))
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation ("com.google.firebase:firebase-auth-ktx")
     implementation ("com.google.firebase:firebase-firestore-ktx")
-
+//    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+//    implementation("androidx.compose.ui:ui-graphics")
+//    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
+//    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+//    debugImplementation("androidx.compose.ui:ui-test-manifest")
 
 
 }

@@ -15,11 +15,16 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.App">
-<!--        <activity-->
-<!--            android:name=".ChatActivity"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_chat"-->
-<!--            android:theme="@style/Theme.App" />-->
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:label="@string/title_activity_chat"
+            android:theme="@style/Theme.App" />
+        <!-- <activity -->
+        <!-- android:name=".ChatActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:label="@string/title_activity_chat" -->
+        <!-- android:theme="@style/Theme.App" /> -->
         <activity
             android:name=".MapsActivity"
             android:exported="false"

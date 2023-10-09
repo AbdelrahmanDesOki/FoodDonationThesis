@@ -617,6 +617,10 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
+    <color name="browser_actions_bg_grey">#F5F5F5</color>
+    <color name="browser_actions_divider_color">#1E000000</color>
+    <color name="browser_actions_text_color">#DE000000</color>
+    <color name="browser_actions_title_color">#646464</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="cardview_dark_background">#FF424242</color>
@@ -943,6 +947,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="appcompat_dialog_background_inset">16dp</dimen>
+    <dimen name="browser_actions_context_menu_max_width">500dp</dimen>
+    <dimen name="browser_actions_context_menu_min_padding">20dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -1766,6 +1772,11 @@
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="gcm_defaultSenderId" translatable="false">517429964950</string>
+    <string name="google_api_key" translatable="false">AIzaSyBsOYxfaM4ASS15ju2ChqGRpk66qhxMX84</string>
+    <string name="google_app_id" translatable="false">1:517429964950:android:4189f99c36fb0eb2edd2b7</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBsOYxfaM4ASS15ju2ChqGRpk66qhxMX84</string>
+    <string name="google_storage_bucket" translatable="false">fooddonationchat.appspot.com</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="in_progress">In progress</string>
@@ -1882,6 +1893,7 @@
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="permissions_error">You are not allowed to delete or modify tasks that don\'t belong to you.</string>
     <string name="permissions_warning">You can only modify or remove tasks that belong to you.</string>
+    <string name="project_id" translatable="false">fooddonationchat</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="range_end">"Range end"</string>

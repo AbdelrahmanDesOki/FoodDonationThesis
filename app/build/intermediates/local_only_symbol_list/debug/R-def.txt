@@ -30,6 +30,11 @@ string dataExplorerLink
 string delete
 string does_not_have_account
 string enter_item_name
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string item_Details
 string item_priority
 string item_summary
@@ -39,6 +44,7 @@ string mine
 string more
 string permissions_error
 string permissions_warning
+string project_id
 string prompt_email
 string prompt_password
 string realm_app_id

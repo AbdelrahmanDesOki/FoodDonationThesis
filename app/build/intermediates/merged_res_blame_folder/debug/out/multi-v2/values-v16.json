@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-60:/values-v16/values-v16.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-62:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-3/46134f55dcd895306dc1bdd32fb53a00/transformed/core-1.8.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-3/49bc2ed183013c58e2fe5036f7775d55/transformed/core-1.8.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-3/0c78a73c58790dcdc3275ae050e25834/transformed/appcompat-1.5.1/res/values-v16/values-v16.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-3/bab228e28c853c244b1fa3236ebf5b3e/transformed/appcompat-1.5.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

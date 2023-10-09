@@ -16,6 +16,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 /**
  * Types of UX events triggered by user actions.
@@ -83,12 +86,15 @@ class LoginViewModel : ViewModel() {
     fun createAccount(email: String, password: String) {
         _state.value = state.value.copy(enabled = false)
 
+
         CoroutineScope(Dispatchers.IO).launch {
             runCatching {
                 authRepository.createAccount(email, password)
             }.onSuccess {
                 _event.emit(LoginEvent.ShowMessage(EventSeverity.INFO, "User created successfully."))
+
                 login(email, password)
+
             }.onFailure { ex: Throwable ->
                 _state.value = state.value.copy(enabled = true)
                 val message = when (ex) {
@@ -97,6 +103,7 @@ class LoginViewModel : ViewModel() {
                 }
                 _event.emit(LoginEvent.ShowMessage(EventSeverity.ERROR, message))
             }
+
         }
     }
 

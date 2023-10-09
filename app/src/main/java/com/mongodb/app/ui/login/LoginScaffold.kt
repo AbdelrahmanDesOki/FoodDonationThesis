@@ -23,9 +23,14 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.mongodb.app.MapsActivity
 import com.mongodb.app.R
 import com.mongodb.app.presentation.login.LoginAction
 import com.mongodb.app.presentation.login.LoginViewModel
+import com.mongodb.app.ui.tasks.HomeView
 import com.mongodb.app.ui.theme.Blue
 import com.mongodb.app.ui.theme.Purple200
 
@@ -35,6 +40,10 @@ private const val USABLE_WIDTH = 0.8F
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 fun LoginScaffold(loginViewModel: LoginViewModel) {
+    val auth: FirebaseAuth = Firebase.auth
+
+
+
     Scaffold(
         content = {
             Column {
@@ -105,10 +114,21 @@ fun LoginScaffold(loginViewModel: LoginViewModel) {
                                         state.password
                                     )
                                 }
+
+                                //Adding same user to firebase auth to authenticate same messages
+                                auth.createUserWithEmailAndPassword(loginViewModel.state.value.email, loginViewModel.state.value.password)
+                                .addOnCompleteListener {
+                                if (it.isSuccessful) {
+                                }
+
+                            }
+
                             }) {
                             val actionText = when (loginViewModel.state.value.action) {
                                 LoginAction.CREATE_ACCOUNT -> stringResource(R.string.create_account)
                                 LoginAction.LOGIN -> stringResource(R.string.log_in)
+
+
                             }
                             Text(actionText)
                         }

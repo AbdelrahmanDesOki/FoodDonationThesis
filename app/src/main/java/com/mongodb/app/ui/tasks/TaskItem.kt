@@ -1,5 +1,7 @@
 package com.mongodb.app.ui.tasks
 
+import android.content.Intent
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
@@ -10,36 +12,41 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Send
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mongodb.app.R
+import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.mongodb.app.ChatActivity
+import com.mongodb.app.ComposeItemActivity
+import com.mongodb.app.MapsActivity
 import com.mongodb.app.data.MockRepository
 import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.ItemContextualMenuViewModel
 import com.mongodb.app.presentation.tasks.TaskViewModel
 import com.mongodb.app.ui.theme.Blue
 import com.mongodb.app.ui.theme.MyApplicationTheme
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.icons.Icons
-import com.mongodb.app.ui.tasks.ChatPage
-import androidx.compose.material.icons.filled.Send
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.unit.sp
 import com.mongodb.app.ui.theme.Purple200
-import java.time.format.TextStyle
 
 
 @Composable
@@ -47,6 +54,7 @@ fun TaskItem(
     taskViewModel: TaskViewModel,
     itemContextualMenuViewModel: ItemContextualMenuViewModel,
     task: Item,
+    homeViewModel: HomeViewModel = viewModel()
 
 ) {
     var chatTabOpened by remember { mutableStateOf(false) }
@@ -57,6 +65,7 @@ fun TaskItem(
             dampingRatio = Spring.DampingRatioMediumBouncy,
             stiffness = Spring.StiffnessLow), label = ""
     )
+
 
     Column(modifier = Modifier
         .padding(5.dp)
@@ -69,7 +78,13 @@ fun TaskItem(
                 .height(80.dp)
         ) {
 
-            ChatButton(onClick = { chatTabOpened = true })
+
+            ChatButton(onClick = {
+
+
+
+            })
+
 
 
             Column {
@@ -124,6 +139,19 @@ fun TaskItem(
 
 }
 
+//@Composable
+//fun ConditionalNavigation() {
+//    val currentUser = FirebaseAuth.getInstance().currentUser
+//
+//    if (currentUser != null) {
+//        HomeView()
+//    } else {
+//        // Display a login screen or navigate to it.
+//        // You can use the Navigation component for navigation.
+//        Text("Please log in")
+//    }
+//}
+
 @Preview(showBackground = true)
 @Composable
 fun TaskItemPreview() {
@@ -143,8 +171,9 @@ fun ChatButton(
     onClick: () -> Unit,
 
 ) {
+    var navigateToActivity by remember { mutableStateOf(false) }
     IconButton(
-        onClick = { onClick },
+        onClick = { navigateToActivity =true },
         modifier = Modifier
             .padding(4.dp)
             .background(Color.White, shape = CircleShape),
@@ -156,5 +185,16 @@ fun ChatButton(
             contentDescription = null, // Provide a meaningful description
             tint = Color.Black
         )
+    }
+
+    if (navigateToActivity) {
+        // Use the BackHandler to clear the flag when navigating back
+        BackHandler {
+            navigateToActivity = false
+        }
+        // Launch the new activity using an Intent
+        var intent = Intent(LocalContext.current, ChatActivity::class.java)
+
+        LocalContext.current.startActivity(intent)
     }
 }
