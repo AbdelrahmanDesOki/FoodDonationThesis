@@ -69,9 +69,8 @@ class HomeViewModel : ViewModel() {
             }
     }
 
-    /**
-     * Update the list after getting the details from firestore
-     */
+    //Update the list after getting the details from firestore
+
     private fun updateMessages(list: MutableList<Map<String, Any>>) {
         _messages.value = list.asReversed()
     }
