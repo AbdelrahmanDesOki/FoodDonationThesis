@@ -2,6 +2,7 @@ package com.mongodb.app.ui.tasks
 
 
 import android.graphics.drawable.Icon
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -107,6 +108,8 @@ fun HomeView(
 fun SingleMessage(message: String, isCurrentUser: Boolean) {
     Card(
         shape = RoundedCornerShape(16.dp),
+        modifier = Modifier
+//            .background(if (isCurrentUser) MaterialTheme.colorScheme.primary else Color.White)
 
 //        backgroundColor = if (isCurrentUser) MaterialTheme.colors.primary else Color.White
     ) {
@@ -117,7 +120,11 @@ fun SingleMessage(message: String, isCurrentUser: Boolean) {
                 TextAlign.End
             else
                 TextAlign.Start,
-            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+
+//                .background(if (!isCurrentUser) MaterialTheme.colorScheme.primary else Color.White)
 //            color = if (!isCurrentUser) MaterialTheme.colors.primary else Color.White
         )
     }

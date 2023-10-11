@@ -21,16 +21,13 @@ class HomeViewModel : ViewModel() {
     private var _messages = MutableLiveData(emptyList<Map<String, Any>>().toMutableList())
     val messages: LiveData<MutableList<Map<String, Any>>> = _messages
 
-    /**
-     * Update the message value as user types
-     */
+    // Update the message value as user types
     fun updateMessage(message: String) {
         _message.value = message
     }
 
-    /**
-     * Send message
-     */
+    //Send message
+
     fun addMessage() {
         val message: String = _message.value ?: throw IllegalArgumentException("message empty")
         if (message.isNotEmpty()) {
@@ -46,9 +43,7 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    /**
-     * Get the messages
-     */
+    //Get messages
     private fun getMessages() {
         Firebase.firestore.collection(Constants.MESSAGES)
             .orderBy(Constants.SENT_ON)

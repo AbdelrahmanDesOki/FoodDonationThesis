@@ -118,10 +118,16 @@ fun LoginScaffold(loginViewModel: LoginViewModel) {
                                 //Adding same user to firebase auth to authenticate same messages
                                 auth.createUserWithEmailAndPassword(loginViewModel.state.value.email, loginViewModel.state.value.password)
                                 .addOnCompleteListener {
-                                if (it.isSuccessful) {
+                                    if (it.isSuccessful) {
+                                    }
                                 }
+                                auth.signInWithEmailAndPassword(loginViewModel.state.value.email, loginViewModel.state.value.password)
+                                    .addOnCompleteListener {
+                                            if (it.isSuccessful) {
+                                            }
+                                            }
 
-                            }
+
 
                             }) {
                             val actionText = when (loginViewModel.state.value.action) {
