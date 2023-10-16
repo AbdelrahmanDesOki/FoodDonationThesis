@@ -3078,6 +3078,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id report_drawn
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3640,11 +3641,13 @@ string selected
 string show_all_tasks
 string show_completed_tasks_only
 string status_bar_notification_info_overflow
+string switch_role
 string sync_message
 string tab
 string template_percent
 string title_activity_chat
 string title_activity_maps
+string title_activity_photo
 string unable_to_switch
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

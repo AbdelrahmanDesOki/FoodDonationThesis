@@ -34,6 +34,7 @@ import androidx.core.content.ContextCompat.startActivity
 import com.mongodb.app.ComposeItemActivity
 import com.mongodb.app.ComposeLoginActivity
 import com.mongodb.app.MapsActivity
+import com.mongodb.app.PhotoActivity
 import com.mongodb.app.R
 import com.mongodb.app.data.MockRepository
 import com.mongodb.app.presentation.tasks.AddItemViewModel
@@ -45,6 +46,7 @@ import com.mongodb.app.ui.theme.Purple200
 @Composable
 fun AddItemPrompt(viewModel: AddItemViewModel) {
     var navigateToActivity by remember { mutableStateOf(false) }
+    var navigateToPhoto by remember { mutableStateOf(false) }
 
     AlertDialog(
 
@@ -76,6 +78,27 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                     },
                     label = { Text(stringResource(R.string.item_Details)) }
                 )
+
+                Button(onClick = { navigateToPhoto = true },
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .fillMaxWidth(),
+                    colors = buttonColors(containerColor = Purple200)
+                ) {
+                    Text(text = "Add Photo")
+                }
+                if (navigateToPhoto) {
+                    // Use the BackHandler to clear the flag when navigating back
+                    BackHandler {
+                        navigateToPhoto = false
+                    }
+                    // Launch the new activity using an Intent
+                    var intent = Intent(LocalContext.current, PhotoActivity::class.java)
+
+                    LocalContext.current.startActivity(intent)
+
+
+                }
 
 
                 Button(onClick = {

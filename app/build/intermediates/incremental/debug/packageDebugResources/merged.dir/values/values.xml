@@ -51,6 +51,7 @@
     <string name="sync_message">Log in with the same account on another device or simulator to see your list sync in real-time.</string>
     <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_photo">PhotoActivity</string>
     <string name="unable_to_switch">Switching subscriptions does not affect Realm data when Sync is offline</string>
     <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         

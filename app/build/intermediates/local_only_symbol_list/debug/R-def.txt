@@ -59,5 +59,6 @@ string show_completed_tasks_only
 string sync_message
 string title_activity_chat
 string title_activity_maps
+string title_activity_photo
 string unable_to_switch
 style Theme.App
