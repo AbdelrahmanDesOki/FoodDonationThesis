@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-65:/values-ru/values-ru.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-62:/values-ru/values-ru.xml",
             "map": [
                 {
                     "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\fa7786a389dd306b9ff975a9744d8655\\transformed\\material3-1.0.1\\res\\values-ru\\values-ru.xml",
@@ -35,23 +35,6 @@
                         "startOffsets": "4810",
                         "endColumns": "156",
                         "endOffsets": "4962"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\39fe876361faec7ff6af23e64a2d2fdb\\transformed\\core-1.9.0\\res\\values-ru\\values-ru.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "128",
-                        "startColumns": "4",
-                        "startOffsets": "11526",
-                        "endColumns": "100",
-                        "endOffsets": "11622"
                     }
                 },
                 {
@@ -108,20 +91,37 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\b0244d3df22d1376bce2b3fa414a2479\\transformed\\ui-1.4.0\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\aa765c10743fdb5d635611f7e23a4757\\transformed\\ui-1.3.2\\res\\values-ru\\values-ru.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,198,281,379,481,573,655,745,833,915,986,1056,1140,1227,1299,1383,1453",
-                        "endColumns": "92,82,97,101,91,81,89,87,81,70,69,83,86,71,83,69,122",
-                        "endOffsets": "193,276,374,476,568,650,740,828,910,981,1051,1135,1222,1294,1378,1448,1571"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,198,281,379,481,573,655,745,833,915,986,1056,1140,1227,1299,1369",
+                        "endColumns": "92,82,97,101,91,81,89,87,81,70,69,83,86,71,69,122",
+                        "endOffsets": "193,276,374,476,568,650,740,828,910,981,1051,1135,1222,1294,1364,1487"
                     },
                     "to": {
-                        "startLines": "39,40,60,61,63,68,69,119,120,121,122,124,125,127,129,130,131",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3558,3651,6084,6182,6365,6777,6859,10810,10898,10980,11051,11201,11285,11454,11627,11711,11781",
-                        "endColumns": "92,82,97,101,91,81,89,87,81,70,69,83,86,71,83,69,122",
-                        "endOffsets": "3646,3729,6177,6279,6452,6854,6944,10893,10975,11046,11116,11280,11367,11521,11706,11776,11899"
+                        "startLines": "39,40,60,61,63,68,69,119,120,121,122,124,125,127,129,130",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3558,3651,6084,6182,6365,6777,6859,10810,10898,10980,11051,11201,11285,11454,11627,11697",
+                        "endColumns": "92,82,97,101,91,81,89,87,81,70,69,83,86,71,69,122",
+                        "endOffsets": "3646,3729,6177,6279,6452,6854,6944,10893,10975,11046,11116,11280,11367,11521,11692,11815"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\49bc2ed183013c58e2fe5036f7775d55\\transformed\\core-1.8.0\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "128",
+                        "startColumns": "4",
+                        "startOffsets": "11526",
+                        "endColumns": "100",
+                        "endOffsets": "11622"
                     }
                 }
             ]

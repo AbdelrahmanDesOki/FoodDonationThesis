@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-65:/values-kn/values-kn.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-62:/values-kn/values-kn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\fa7786a389dd306b9ff975a9744d8655\\transformed\\material3-1.0.1\\res\\values-kn\\values-kn.xml",
@@ -18,23 +18,6 @@
                         "startOffsets": "3641,6155,6379",
                         "endColumns": "81,71,81",
                         "endOffsets": "3718,6222,6456"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\39fe876361faec7ff6af23e64a2d2fdb\\transformed\\core-1.9.0\\res\\values-kn\\values-kn.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "126",
-                        "startColumns": "4",
-                        "startOffsets": "11414",
-                        "endColumns": "100",
-                        "endOffsets": "11510"
                     }
                 },
                 {
@@ -108,20 +91,37 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\b0244d3df22d1376bce2b3fa414a2479\\transformed\\ui-1.4.0\\res\\values-kn\\values-kn.xml",
+                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\49bc2ed183013c58e2fe5036f7775d55\\transformed\\core-1.8.0\\res\\values-kn\\values-kn.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,202,286,382,482,571,655,748,839,924,995,1066,1148,1234,1313,1390,1459",
-                        "endColumns": "96,83,95,99,88,83,92,90,84,70,70,81,85,78,76,68,117",
-                        "endOffsets": "197,281,377,477,566,650,743,834,919,990,1061,1143,1229,1308,1385,1454,1572"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "37,38,58,59,61,66,67,117,118,119,120,122,123,125,127,128,129",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3460,3557,5959,6055,6227,6621,6705,10684,10775,10860,10931,11084,11166,11335,11515,11592,11661",
-                        "endColumns": "96,83,95,99,88,83,92,90,84,70,70,81,85,78,76,68,117",
-                        "endOffsets": "3552,3636,6050,6150,6311,6700,6793,10770,10855,10926,10997,11161,11247,11409,11587,11656,11774"
+                        "startLines": "126",
+                        "startColumns": "4",
+                        "startOffsets": "11414",
+                        "endColumns": "100",
+                        "endOffsets": "11510"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\aa765c10743fdb5d635611f7e23a4757\\transformed\\ui-1.3.2\\res\\values-kn\\values-kn.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,202,286,382,482,571,655,748,839,924,995,1066,1148,1234,1313,1382",
+                        "endColumns": "96,83,95,99,88,83,92,90,84,70,70,81,85,78,68,117",
+                        "endOffsets": "197,281,377,477,566,650,743,834,919,990,1061,1143,1229,1308,1377,1495"
+                    },
+                    "to": {
+                        "startLines": "37,38,58,59,61,66,67,117,118,119,120,122,123,125,127,128",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3460,3557,5959,6055,6227,6621,6705,10684,10775,10860,10931,11084,11166,11335,11515,11584",
+                        "endColumns": "96,83,95,99,88,83,92,90,84,70,70,81,85,78,68,117",
+                        "endOffsets": "3552,3636,6050,6150,6311,6700,6793,10770,10855,10926,10997,11161,11247,11409,11579,11697"
                     }
                 }
             ]

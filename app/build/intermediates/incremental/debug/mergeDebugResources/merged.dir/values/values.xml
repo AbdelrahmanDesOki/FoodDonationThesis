@@ -1562,7 +1562,6 @@
     <item name="pooling_container_listener_holder_tag" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
-    <item name="report_drawn" type="id"/>
     <item name="row_index_key" type="id"/>
     <item name="save_non_transition_alpha" type="id"/>
     <item name="save_overlay_view" type="id"/>
@@ -1911,7 +1910,6 @@
     <string name="show_all_tasks">Show all tasks</string>
     <string name="show_completed_tasks_only">Show completed tasks only</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="switch_role">Switch</string>
     <string name="sync_message">Log in with the same account on another device or simulator to see your list sync in real-time.</string>
     <string name="tab">Tab</string>
     <string name="template_percent"><ns2:g id="percentage">%1$d</ns2:g> percent.</string>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-65:/values-bs/values-bs.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-62:/values-bs/values-bs.xml",
             "map": [
                 {
                     "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\fa7786a389dd306b9ff975a9744d8655\\transformed\\material3-1.0.1\\res\\values-bs\\values-bs.xml",
@@ -57,24 +57,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\b0244d3df22d1376bce2b3fa414a2479\\transformed\\ui-1.4.0\\res\\values-bs\\values-bs.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,206,294,388,487,573,650,742,834,919,991,1062,1143,1229,1302,1382,1452",
-                        "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,79,69,117",
-                        "endOffsets": "201,289,383,482,568,645,737,829,914,986,1057,1138,1224,1297,1377,1447,1565"
-                    },
-                    "to": {
-                        "startLines": "38,39,59,60,62,67,68,118,119,120,121,123,124,126,128,129,130",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3487,3588,5944,6038,6218,6616,6693,10648,10740,10825,10897,11048,11129,11302,11476,11556,11626",
-                        "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,79,69,117",
-                        "endOffsets": "3583,3671,6033,6132,6299,6688,6780,10735,10820,10892,10963,11124,11210,11370,11551,11621,11739"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\39fe876361faec7ff6af23e64a2d2fdb\\transformed\\core-1.9.0\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\49bc2ed183013c58e2fe5036f7775d55\\transformed\\core-1.8.0\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -88,6 +71,23 @@
                         "startOffsets": "11375",
                         "endColumns": "100",
                         "endOffsets": "11471"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\I585955\\.gradle\\caches\\transforms-3\\aa765c10743fdb5d635611f7e23a4757\\transformed\\ui-1.3.2\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,206,294,388,487,573,650,742,834,919,991,1062,1143,1229,1302,1372",
+                        "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,69,117",
+                        "endOffsets": "201,289,383,482,568,645,737,829,914,986,1057,1138,1224,1297,1367,1485"
+                    },
+                    "to": {
+                        "startLines": "38,39,59,60,62,67,68,118,119,120,121,123,124,126,128,129",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3487,3588,5944,6038,6218,6616,6693,10648,10740,10825,10897,11048,11129,11302,11476,11546",
+                        "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,69,117",
+                        "endOffsets": "3583,3671,6033,6132,6299,6688,6780,10735,10820,10892,10963,11124,11210,11370,11541,11659"
                     }
                 },
                 {
