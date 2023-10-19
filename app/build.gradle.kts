@@ -71,7 +71,7 @@ dependencies {
 
     //google maps utils
     implementation("com.google.maps.android:android-maps-utils:3.4.0")
-//    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+//   implementation(platform("androidx.compose:compose-bom:2023.03.00"))
 //    implementation("androidx.compose.ui:ui-graphics")
 //    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
 //    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
@@ -87,16 +87,10 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation ("com.google.firebase:firebase-auth-ktx")
     implementation ("com.google.firebase:firebase-firestore-ktx")
-//    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-//    implementation("androidx.compose.ui:ui-graphics")
-//    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
-//    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-//    debugImplementation("androidx.compose.ui:ui-test-manifest")
-//    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-//    implementation("androidx.compose.ui:ui-graphics")
-//    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
-//    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-//    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
+
+    // coil for asyncImage
+    implementation("io.coil-kt:coil-compose:2.3.0")
 
 
 }

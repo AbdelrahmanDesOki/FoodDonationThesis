@@ -1,21 +1,21 @@
-#Mon Oct 16 14:20:22 CEST 2023
-base.0=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.10=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes4.dex
-base.2=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
-base.3=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.4=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.5=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
-base.6=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
-base.7=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.8=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.9=C\:\\Users\\I585955\\Desktop\\FoodDonationThesis\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+#Thu Oct 19 22:01:29 CEST 2023
+base.0=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.10=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeExtDexDebug/classes4.dex
+base.2=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.3=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
+base.4=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
+base.5=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
+base.6=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
+base.7=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex
+base.8=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.9=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.10=classes4.dex
-path.2=11/classes.dex
-path.3=15/classes.dex
-path.4=1/classes.dex
+path.2=1/classes.dex
+path.3=11/classes.dex
+path.4=15/classes.dex
 path.5=6/classes.dex
 path.6=8/classes.dex
 path.7=9/classes.dex

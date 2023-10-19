@@ -64,7 +64,7 @@ class HomeViewModel : ViewModel() {
                         list.add(data)
                     }
                 }
-
+// Issue now is: Everyone can see the messages.
                 updateMessages(list)
             }
     }

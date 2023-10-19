@@ -1,5 +1,6 @@
 package com.mongodb.app
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -19,10 +20,13 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
+import com.mongodb.app.ui.tasks.SinglePhotoPicker
 import com.mongodb.app.ui.theme.MyApplicationTheme
 import java.io.ByteArrayOutputStream
 import java.net.URLEncoder
 import java.util.UUID
+
 
 class PhotoActivity : ComponentActivity() {
 
@@ -37,7 +41,7 @@ class PhotoActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme  {
-                auth = FirebaseAuth.getInstance()
+//                auth = FirebaseAuth.getInstance()
                 try{
                     startActivityForResult(
                         Intent(MediaStore.ACTION_IMAGE_CAPTURE),
@@ -47,17 +51,23 @@ class PhotoActivity : ComponentActivity() {
                 catch (e: Exception) {
                     e.printStackTrace()
                 }
+
+
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting3("Android")
+//                    if(uploadBitmap != null){
+//                        uploadImage()
+//                    }
+                    SinglePhotoPicker()
                 }
             }
         }
     }
 }
+
 
 @Composable
 fun Greeting3(name: String, modifier: Modifier = Modifier) {
@@ -68,25 +78,27 @@ fun Greeting3(name: String, modifier: Modifier = Modifier) {
 }
 @Throws(Exception::class)
 private fun uploadImage() {
+    var uploadBitmap: Bitmap? = null
+    var context:Context? = null
     //converting image to bytes to be able to upload it.
-//    val bias = ByteArrayOutputStream()
-//    uploadBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, bias)
-//    val imageInBytes = bias.toByteArray()
-//    val storageRef = Firebase.storage.reference
-//    val newImage = URLEncoder.encode(UUID.randomUUID().toString(), "UTF-8") + ".jpg"
-//    val newImagesRef = storageRef.child("Users/$newImage")
-//    newImagesRef.putBytes(imageInBytes)
-//        .addOnFailureListener { exception ->
-//            Toast.makeText(this, exception.message, Toast.LENGTH_SHORT)
-//                .show()
-//        }.addOnSuccessListener { taskSnapshot ->
-//            newImagesRef.downloadUrl.addOnCompleteListener (
-//                object : OnCompleteListener<Uri> {
-//                override fun onComplete(p0: Task<Uri>) {
-////                    sendItem(p0.result.toString())
-//                }
-//            })
-//        }
+    val bias = ByteArrayOutputStream()
+    uploadBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, bias)
+    val imageInBytes = bias.toByteArray()
+    val storageRef = Firebase.storage.reference
+    val newImage = URLEncoder.encode(UUID.randomUUID().toString(), "UTF-8") + ".jpg"
+    val newImagesRef = storageRef.child("Images/$newImage")
+    newImagesRef.putBytes(imageInBytes)
+        .addOnFailureListener { exception ->
+            Toast.makeText(context, exception.message, Toast.LENGTH_SHORT)
+                .show()
+        }.addOnSuccessListener { taskSnapshot ->
+            newImagesRef.downloadUrl.addOnCompleteListener (
+                object : OnCompleteListener<Uri> {
+                override fun onComplete(p0: Task<Uri>) {
+//                    sendItem(p0.result.toString())
+                }
+            })
+        }
 }
 
 
