@@ -4,12 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Environment
 import android.provider.MediaStore
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -18,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -28,8 +34,13 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.io.ByteArrayOutputStream
+import java.io.File
 import java.net.URLEncoder
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import java.util.UUID
+import java.util.concurrent.Executors
 
 
 @Composable
@@ -50,21 +61,14 @@ fun SinglePhotoPicker(){
 
     Column{
         Button(onClick = {
-            uploadImage()
-//            singlePhotoPicker.launch(
-//                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
-//            )
 
-//            try {
-//                startActivityForResult(
-//                    Intent(MediaStore.ACTION_IMAGE_CAPTURE),
-//                    CAMERA_REQUEST_CODE
-//                )
-//            } catch (e: Exception) {
-//                e.printStackTrace()
-//            }
+            singlePhotoPicker.launch(
+                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+            )
+
+
         }){
-            Text("Pick an Image")
+            Text("select an Image")
         }
 
 
@@ -82,27 +86,4 @@ fun SinglePhotoPicker(){
     }
 }
 
-@Throws(Exception::class)
-private fun uploadImage() {
-    var uploadBitmap: Bitmap? = null
-    var context: Context? = null
-    //converting image to bytes to be able to upload it.
-    val bias = ByteArrayOutputStream()
-    uploadBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, bias)
-    val imageInBytes = bias.toByteArray()
-    val storageRef = Firebase.storage.reference
-    val newImage = URLEncoder.encode(UUID.randomUUID().toString(), "UTF-8") + ".jpg"
-    val newImagesRef = storageRef.child("Images/$newImage")
-    newImagesRef.putBytes(imageInBytes)
-        .addOnFailureListener { exception ->
-            Toast.makeText(context, exception.message, Toast.LENGTH_SHORT)
-                .show()
-        }.addOnSuccessListener { taskSnapshot ->
-            newImagesRef.downloadUrl.addOnCompleteListener (
-                object : OnCompleteListener<Uri> {
-                    override fun onComplete(p0: Task<Uri>) {
-//                    sendItem(p0.result.toString())
-                    }
-                })
-        }
-}
+

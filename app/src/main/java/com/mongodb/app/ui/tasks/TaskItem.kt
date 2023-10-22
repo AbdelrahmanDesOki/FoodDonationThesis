@@ -1,17 +1,21 @@
 package com.mongodb.app.ui.tasks
 
 import android.content.Intent
+import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
@@ -36,7 +40,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.viewmodel.compose.viewModel
+import coil.compose.AsyncImage
+import coil.compose.rememberAsyncImagePainter
+import coil.compose.rememberImagePainter
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import com.mongodb.app.ChatActivity
 import com.mongodb.app.ComposeItemActivity
 import com.mongodb.app.MapsActivity
@@ -57,7 +67,7 @@ fun TaskItem(
     homeViewModel: HomeViewModel = viewModel()
 
 ) {
-    var chatTabOpened by remember { mutableStateOf(false) }
+    var photoloaded by remember { mutableStateOf(false) }
     val expanded = remember { mutableStateOf(false) }
     val extraPadding by animateDpAsState(
         if (expanded.value) 20.dp else 0.dp,
@@ -65,6 +75,13 @@ fun TaskItem(
             dampingRatio = Spring.DampingRatioMediumBouncy,
             stiffness = Spring.StiffnessLow), label = ""
     )
+    val uid = FirebaseAuth.getInstance().currentUser?.uid.toString()
+    val storageReference = FirebaseStorage.getInstance().getReference("images/$uid.jpg")
+//    val storageReference = Firebase.storage.reference.child("images/$uid.jpg")
+    var imageUrl = ""
+
+
+
 
 
     Column(modifier = Modifier
@@ -132,6 +149,32 @@ fun TaskItem(
                     bottom = extraPadding.coerceAtLeast(5.dp)
                 )) {
                     Text(text = task.description)
+
+                    storageReference.downloadUrl.addOnSuccessListener { uri ->
+                        // Use the URI to display or process the image
+                         imageUrl = uri.toString()
+                         photoloaded = true
+
+                        // Load and display the image using Picasso, Glide, or another image loading library
+                    }.addOnFailureListener { exception ->
+                        // Handle any errors that occurred during the download
+
+
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                     if(photoloaded){
+                         //                    AsyncImage(model = imageUrl, contentDescription = null, modifier = Modifier.size(248.dp))
+
+                         Image(
+                             painter = rememberAsyncImagePainter(imageUrl),
+                             contentDescription = null,
+                             modifier = Modifier.size(150.dp) // Modify the size as needed
+                         )
+                     }
+
+
+
                 }
             }
 

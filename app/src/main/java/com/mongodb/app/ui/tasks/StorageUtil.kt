@@ -3,6 +3,7 @@ package com.mongodb.app.ui.tasks
 import android.content.Context
 import android.net.Uri
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
@@ -19,10 +20,11 @@ class StorageUtil {
             var storageRef = storage.reference
 
             val unique_image_name = UUID.randomUUID()
+            val uniq = FirebaseAuth.getInstance().currentUser?.uid
             var spaceRef: StorageReference
 
             if (type == "image") {
-                spaceRef = storageRef.child("images/$unique_image_name.jpg")
+                spaceRef = storageRef.child("images/$uniq.jpg")
             }
             else {
                 spaceRef = storageRef.child("videos/$unique_image_name.mp4")
@@ -44,10 +46,9 @@ class StorageUtil {
                     // Handle unsuccessful uploads
                 }.addOnSuccessListener { taskSnapshot ->
                     // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-                    // ...
                     Toast.makeText(
                         context,
-                        "upload successed",
+                        "upload succeed",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

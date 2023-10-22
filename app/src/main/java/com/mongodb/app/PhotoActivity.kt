@@ -42,15 +42,15 @@ class PhotoActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme  {
 //                auth = FirebaseAuth.getInstance()
-                try{
-                    startActivityForResult(
-                        Intent(MediaStore.ACTION_IMAGE_CAPTURE),
-                        CAMERA_REQUEST_CODE
-                    )
-                }
-                catch (e: Exception) {
-                    e.printStackTrace()
-                }
+//                try{
+//                    startActivityForResult(
+//                        Intent(MediaStore.ACTION_IMAGE_CAPTURE),
+//                        CAMERA_REQUEST_CODE
+//                    )
+//                }
+//                catch (e: Exception) {
+//                    e.printStackTrace()
+//                }
 
 
                 // A surface container using the 'background' color from the theme
