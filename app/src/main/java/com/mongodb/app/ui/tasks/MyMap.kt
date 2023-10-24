@@ -125,7 +125,9 @@ fun MyMap(
                     icon = if (changeIcon) {
                         bitmapDescriptor(context, R.drawable.abc_btn_radio_material)
                     } else null
-                )
+                ){
+
+                }
             }
 
             if (lineType == LineType.POLYLINE) {

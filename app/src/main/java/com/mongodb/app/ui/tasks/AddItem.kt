@@ -47,6 +47,7 @@ import com.mongodb.app.ui.theme.Purple200
 fun AddItemPrompt(viewModel: AddItemViewModel) {
     var navigateToActivity by remember { mutableStateOf(false) }
     var navigateToPhoto by remember { mutableStateOf(false) }
+    var receivedMessage = ""
 
     AlertDialog(
 
@@ -121,6 +122,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                     }
                     // Launch the new activity using an Intent
                     var intent = Intent(LocalContext.current, MapsActivity::class.java)
+                    receivedMessage = intent.getStringExtra("EXTRA_MESSAGE").toString()
 //                    startActivityForResult(MapsActivity, 101)
                     LocalContext.current.startActivity(intent)
 //                    LocalContext.current.
@@ -130,7 +132,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
 
                 val priorities = PriorityLevel.values()
                 val intent = Intent(LocalContext.current,ComposeItemActivity::class.java)
-                val receivedMessage = intent.getStringExtra("EXTRA_MESSAGE")
+//                val receivedMessage = intent.getStringExtra("EXTRA_MESSAGE")
                 if (receivedMessage != null) {
                     Text(text =receivedMessage)
                     viewModel.Location_.value

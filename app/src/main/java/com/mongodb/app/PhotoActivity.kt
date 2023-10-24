@@ -30,37 +30,21 @@ import java.util.UUID
 
 class PhotoActivity : ComponentActivity() {
 
-    private lateinit var auth: FirebaseAuth
-    var uploadBitmap: Bitmap? = null
-    companion object {
-        private const val PERMISSION_REQUEST_CODE = 1001
-        private const val CAMERA_REQUEST_CODE = 1002
-    }
+//    private lateinit var auth: FirebaseAuth
+//    var uploadBitmap: Bitmap? = null
+//    companion object {
+//        private const val PERMISSION_REQUEST_CODE = 1001
+//        private const val CAMERA_REQUEST_CODE = 1002
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme  {
-//                auth = FirebaseAuth.getInstance()
-//                try{
-//                    startActivityForResult(
-//                        Intent(MediaStore.ACTION_IMAGE_CAPTURE),
-//                        CAMERA_REQUEST_CODE
-//                    )
-//                }
-//                catch (e: Exception) {
-//                    e.printStackTrace()
-//                }
-
-
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    if(uploadBitmap != null){
-//                        uploadImage()
-//                    }
                     SinglePhotoPicker()
                 }
             }
@@ -76,30 +60,30 @@ fun Greeting3(name: String, modifier: Modifier = Modifier) {
         modifier = modifier
     )
 }
-@Throws(Exception::class)
-private fun uploadImage() {
-    var uploadBitmap: Bitmap? = null
-    var context:Context? = null
-    //converting image to bytes to be able to upload it.
-    val bias = ByteArrayOutputStream()
-    uploadBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, bias)
-    val imageInBytes = bias.toByteArray()
-    val storageRef = Firebase.storage.reference
-    val newImage = URLEncoder.encode(UUID.randomUUID().toString(), "UTF-8") + ".jpg"
-    val newImagesRef = storageRef.child("Images/$newImage")
-    newImagesRef.putBytes(imageInBytes)
-        .addOnFailureListener { exception ->
-            Toast.makeText(context, exception.message, Toast.LENGTH_SHORT)
-                .show()
-        }.addOnSuccessListener { taskSnapshot ->
-            newImagesRef.downloadUrl.addOnCompleteListener (
-                object : OnCompleteListener<Uri> {
-                override fun onComplete(p0: Task<Uri>) {
-//                    sendItem(p0.result.toString())
-                }
-            })
-        }
-}
+//@Throws(Exception::class)
+//private fun uploadImage() {
+//    var uploadBitmap: Bitmap? = null
+//    var context:Context? = null
+//    //converting image to bytes to be able to upload it.
+//    val bias = ByteArrayOutputStream()
+//    uploadBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, bias)
+//    val imageInBytes = bias.toByteArray()
+//    val storageRef = Firebase.storage.reference
+//    val newImage = URLEncoder.encode(UUID.randomUUID().toString(), "UTF-8") + ".jpg"
+//    val newImagesRef = storageRef.child("Images/$newImage")
+//    newImagesRef.putBytes(imageInBytes)
+//        .addOnFailureListener { exception ->
+//            Toast.makeText(context, exception.message, Toast.LENGTH_SHORT)
+//                .show()
+//        }.addOnSuccessListener { taskSnapshot ->
+//            newImagesRef.downloadUrl.addOnCompleteListener (
+//                object : OnCompleteListener<Uri> {
+//                override fun onComplete(p0: Task<Uri>) {
+////                    sendItem(p0.result.toString())
+//                }
+//            })
+//        }
+//}
 
 
 @Preview(showBackground = true)
