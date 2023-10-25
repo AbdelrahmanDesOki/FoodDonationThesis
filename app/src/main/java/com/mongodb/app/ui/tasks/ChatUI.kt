@@ -28,6 +28,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 /**
  * The home view which will contain all the code related to the view for HOME.
@@ -63,7 +65,11 @@ fun HomeView(
         ) {
             items(messages) { message ->
                 val isCurrentUser = message[Constants.IS_CURRENT_USER] as Boolean
+//                var currentUser = Constants.IS_CURRENT_USER
 
+//                if(Constants.IS_CURRENT_USER == Firebase.auth.currentUser?.uid.toString()){
+//
+//                }
                 SingleMessage(
                     message = message[Constants.MESSAGE].toString(),
                     isCurrentUser = isCurrentUser

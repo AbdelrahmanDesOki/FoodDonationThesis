@@ -2,6 +2,7 @@ package com.mongodb.app.ui.tasks
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
@@ -153,6 +154,8 @@ fun TaskItem(
                     storageReference.downloadUrl.addOnSuccessListener { uri ->
                         // Use the URI to display or process the image
                          imageUrl = uri.toString()
+//                        Log.d("Image URL",imageUrl )
+
                          photoloaded = true
 
                         // Load and display the image using Picasso, Glide, or another image loading library
@@ -164,13 +167,13 @@ fun TaskItem(
                     Spacer(modifier = Modifier.height(10.dp))
 
                      if(photoloaded){
-                         //                    AsyncImage(model = imageUrl, contentDescription = null, modifier = Modifier.size(248.dp))
+                         AsyncImage(model = imageUrl, contentDescription = null, modifier = Modifier.size(248.dp))
 
-                         Image(
-                             painter = rememberAsyncImagePainter(imageUrl),
-                             contentDescription = null,
-                             modifier = Modifier.size(150.dp) // Modify the size as needed
-                         )
+//                         Image(
+//                             painter = rememberAsyncImagePainter(imageUrl),
+//                             contentDescription = null,
+//                             modifier = Modifier.size(150.dp) // Modify the size as needed
+//                         )
                      }
 
 

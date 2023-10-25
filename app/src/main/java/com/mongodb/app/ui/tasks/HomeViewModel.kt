@@ -26,11 +26,18 @@ class HomeViewModel : ViewModel() {
         _message.value = message
     }
 
+    val stringList = mutableListOf<String>()
+
+
     //Send message
 
     fun addMessage() {
         val message: String = _message.value ?: throw IllegalArgumentException("message empty")
         if (message.isNotEmpty()) {
+            stringList.add(Constants.SENT_BY)
+//            stringList.add("ypzp89swD0TMK7IkZ478SHPVyqx1")
+//            stringList.add("00ipDG3juaSEXweQVv92KwHCrwg1")
+
             Firebase.firestore.collection(Constants.MESSAGES).document().set(
                 hashMapOf(
                     Constants.MESSAGE to message,
@@ -39,7 +46,9 @@ class HomeViewModel : ViewModel() {
                 )
             ).addOnSuccessListener {
                 _message.value = ""
+
             }
+
         }
     }
 
@@ -65,13 +74,24 @@ class HomeViewModel : ViewModel() {
                     }
                 }
 // Issue now is: Everyone can see the messages.
-                updateMessages(list)
+                for (item in stringList) {
+                    if (item == Firebase.auth.currentUser?.uid.toString()) {
+                        updateMessages(list)
+//                        Log.d("test", item)
+                        break
+                    }
+                }
+
+//                updateMessages(list)
+
+
             }
     }
 
     //Update the list after getting the details from firestore
 
     private fun updateMessages(list: MutableList<Map<String, Any>>) {
+
         _messages.value = list.asReversed()
     }
 }
