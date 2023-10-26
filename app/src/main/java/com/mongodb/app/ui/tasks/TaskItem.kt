@@ -79,7 +79,10 @@ fun TaskItem(
     val uid = FirebaseAuth.getInstance().currentUser?.uid.toString()
     val storageReference = FirebaseStorage.getInstance().getReference("images/$uid.jpg")
 //    val storageReference = Firebase.storage.reference.child("images/$uid.jpg")
-    var imageUrl = ""
+//    var imageUrl = ""
+    var imageUrl by remember{
+        mutableStateOf<String?>(null)
+    }
 
 
 
@@ -167,13 +170,7 @@ fun TaskItem(
                     Spacer(modifier = Modifier.height(10.dp))
 
                      if(photoloaded){
-                         AsyncImage(model = imageUrl, contentDescription = null, modifier = Modifier.size(248.dp))
-
-//                         Image(
-//                             painter = rememberAsyncImagePainter(imageUrl),
-//                             contentDescription = null,
-//                             modifier = Modifier.size(150.dp) // Modify the size as needed
-//                         )
+                         AsyncImage(model = imageUrl, contentDescription = null, modifier = Modifier.size(220.dp))
                      }
 
 
