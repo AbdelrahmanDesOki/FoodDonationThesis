@@ -1,6 +1,5 @@
 package com.mongodb.app.data
 
-import android.app.ActivityManager.TaskDescription
 import com.mongodb.app.domain.Item
 import com.mongodb.app.app
 import io.realm.kotlin.Realm
@@ -40,7 +39,7 @@ interface SyncRepository {
     /**
      * Adds a task that belongs to the current user using the specified [taskSummary].
      */
-    suspend fun addTask(taskSummary: String,taskDescription: String, taskPriority: PriorityLevel, Location_: String)
+    suspend fun addTask(taskSummary: String,taskDescription: String, taskPriority: PriorityLevel, location_: String, imageString : String)
 
     /**
      * Updates the Sync subscriptions based on the specified [SubscriptionType].
@@ -124,12 +123,14 @@ class RealmSyncRepository(
         }
     }
 
-    override suspend fun addTask(taskSummary: String,taskDescription: String ,taskPriority: PriorityLevel, Location_: String) {
+    override suspend fun addTask(taskSummary: String,taskDescription: String ,taskPriority: PriorityLevel, location_: String, imageString: String) {
         val task = Item().apply {
             owner_id = currentUser.id
             summary = taskSummary
             description = taskDescription
+            Location = location_
             priority = taskPriority.ordinal
+            Image_URL = imageString
         }
         realm.write {
             copyToRealm(task)
@@ -191,7 +192,7 @@ class RealmSyncRepository(
 class MockRepository : SyncRepository {
     override fun getTaskList(): Flow<ResultsChange<Item>> = flowOf()
     override suspend fun toggleIsComplete(task: Item) = Unit
-    override suspend fun addTask(taskSummary: String,taskDescription: String ,taskPriority: PriorityLevel, Location_: String) = Unit
+    override suspend fun addTask(taskSummary: String, taskDescription: String, taskPriority: PriorityLevel, location_: String, imageString : String) = Unit
     override suspend fun updateSubscriptions(subscriptionType: SubscriptionType) = Unit
     override suspend fun deleteTask(task: Item) = Unit
     override fun getActiveSubscriptionType(realm: Realm?): SubscriptionType = SubscriptionType.ALL

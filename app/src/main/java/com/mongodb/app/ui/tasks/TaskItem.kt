@@ -1,13 +1,11 @@
 package com.mongodb.app.ui.tasks
 
 import android.content.Intent
-import android.net.Uri
 import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -39,18 +37,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import coil.compose.rememberAsyncImagePainter
-import coil.compose.rememberImagePainter
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.ktx.storage
 import com.mongodb.app.ChatActivity
-import com.mongodb.app.ComposeItemActivity
-import com.mongodb.app.MapsActivity
 import com.mongodb.app.data.MockRepository
 import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.ItemContextualMenuViewModel
@@ -77,7 +68,8 @@ fun TaskItem(
             stiffness = Spring.StiffnessLow), label = ""
     )
     val uid = FirebaseAuth.getInstance().currentUser?.uid.toString()
-    val storageReference = FirebaseStorage.getInstance().getReference("images/$uid.jpg")
+    val photo = task.Image_URL
+    val storageReference = FirebaseStorage.getInstance().getReference("images/$photo")
 //    val storageReference = Firebase.storage.reference.child("images/$uid.jpg")
 //    var imageUrl = ""
     var imageUrl by remember{
@@ -157,7 +149,8 @@ fun TaskItem(
                     storageReference.downloadUrl.addOnSuccessListener { uri ->
                         // Use the URI to display or process the image
                          imageUrl = uri.toString()
-//                        Log.d("Image URL",imageUrl )
+                        //for testing purposes
+//                        Log.d("Image URL", imageUrl!!)
 
                          photoloaded = true
 

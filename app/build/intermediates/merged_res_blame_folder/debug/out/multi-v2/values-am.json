@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-67:/values-am/values-am.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-66:/values-am/values-am.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/fa7786a389dd306b9ff975a9744d8655/transformed/material3-1.0.1/res/values-am/values-am.xml",

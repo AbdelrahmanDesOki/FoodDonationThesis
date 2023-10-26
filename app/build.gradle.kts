@@ -93,6 +93,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.3.0")
 //    implementation("androidx.camera:camera-core:1.3.0")
 
+//    implementation("androidx.navigation:navigation-compose:2.7.4")
 
 
 }

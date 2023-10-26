@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-67:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-66:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/39fe876361faec7ff6af23e64a2d2fdb/transformed/core-1.9.0/res/values-fr-rCA/values-fr-rCA.xml",

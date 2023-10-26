@@ -1,74 +1,74 @@
 [
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.mongodb.app-merged_res-68:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.mongodb.app-main-70:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.mongodb.app-merged_res-68:/drawable_ic_baseline_wifi_off_24_white.xml.flat",
+        "source": "com.mongodb.app-main-70:/drawable/ic_baseline_wifi_off_24_white.xml"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.mongodb.app-main-71:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "com.mongodb.app-merged_res-68:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.mongodb.app-main-70:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/drawable_ic_baseline_add_24.xml.flat",
-        "source": "com.mongodb.app-main-71:/drawable/ic_baseline_add_24.xml"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.mongodb.app-merged_res-68:/drawable_ic_baseline_logout_24_white.xml.flat",
+        "source": "com.mongodb.app-main-70:/drawable/ic_baseline_logout_24_white.xml"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/drawable_ic_baseline_wifi_24_white.xml.flat",
-        "source": "com.mongodb.app-main-71:/drawable/ic_baseline_wifi_24_white.xml"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/drawable_ic_baseline_logout_24_white.xml.flat",
-        "source": "com.mongodb.app-main-71:/drawable/ic_baseline_logout_24_white.xml"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/drawable_ic_baseline_wifi_off_24_white.xml.flat",
-        "source": "com.mongodb.app-main-71:/drawable/ic_baseline_wifi_off_24_white.xml"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.mongodb.app-merged_res-68:/drawable_ic_baseline_wifi_24_white.xml.flat",
+        "source": "com.mongodb.app-main-70:/drawable/ic_baseline_wifi_24_white.xml"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.mongodb.app-main-71:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.mongodb.app-merged_res-68:/drawable_ic_baseline_add_24.xml.flat",
+        "source": "com.mongodb.app-main-70:/drawable/ic_baseline_add_24.xml"
     },
     {
-        "merged": "com.mongodb.app-merged_res-69:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.mongodb.app-main-71:/drawable/ic_launcher_background.xml"
+        "merged": "com.mongodb.app-merged_res-68:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.mongodb.app-main-70:/mipmap-xxxhdpi/ic_launcher.png"
     }
 ]

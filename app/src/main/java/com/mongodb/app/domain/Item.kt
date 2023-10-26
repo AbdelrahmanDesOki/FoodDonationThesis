@@ -21,7 +21,7 @@ class Item() : RealmObject {
     var owner_id: String = ""
     var priority: Int = PriorityLevel.Tonight.ordinal
     var Location: String = ""
-    var imageURL: String = ""
+    var Image_URL: String = ""
 
     constructor(ownerId: String = "") : this() {
         owner_id = ownerId
@@ -35,6 +35,7 @@ class Item() : RealmObject {
         if (this.summary != other.summary) return false
         if (this.description != other.description) return false
         if (this.Location != other.Location) return false
+        if (this.Image_URL != other.Image_URL) return false
         if (this.owner_id != other.owner_id) return false
         return true
     }

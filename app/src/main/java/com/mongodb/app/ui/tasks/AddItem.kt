@@ -1,7 +1,6 @@
 package com.mongodb.app.ui.tasks
 
 import android.content.Intent
-import android.icu.text.CaseMap.Title
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DropdownMenuItem
@@ -11,8 +10,9 @@ import androidx.compose.ui.unit.dp
 import com.mongodb.app.domain.PriorityLevel
 import android.util.Log
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.buttonColors
@@ -29,17 +29,37 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.content.ContextCompat.startActivity
+
 import com.mongodb.app.ComposeItemActivity
-import com.mongodb.app.ComposeLoginActivity
 import com.mongodb.app.MapsActivity
 import com.mongodb.app.PhotoActivity
 import com.mongodb.app.R
 import com.mongodb.app.data.MockRepository
+import com.mongodb.app.data.SyncRepository
+import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.AddItemViewModel
 import com.mongodb.app.ui.theme.MyApplicationTheme
 import com.mongodb.app.ui.theme.Purple200
+
+
+
+//@Composable
+//fun navigation(){
+//    val navController = rememberNavController()
+//    NavHost(navController = navController, startDestination = Screen.MainScreen.route ){
+//        composable(route = Screen.MainScreen.route){
+//            MainScreen(navController = navController)
+//        }
+//
+//        composable(route = Screen.SinglePhotoPicker.route,
+//            arguments = navArgument("viewModel"){
+//                type = NavType.ReferenceType
+//            }
+//
+//        )
+//    }
+//}
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -93,23 +113,22 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                     BackHandler {
                         navigateToPhoto = false
                     }
-                    // Launch the new activity using an Intent
-                    var intent = Intent(LocalContext.current, PhotoActivity::class.java)
 
-                    LocalContext.current.startActivity(intent)
-
+                    SinglePhotoPicker(viewModel = viewModel)
 
                 }
 
+                Spacer(modifier = Modifier.height(120.dp))
+                Spacer(modifier = Modifier.height(60.dp))
 
                 Button(onClick = {
                     navigateToActivity = true
                                  },
                     modifier = Modifier
-                        .padding(10.dp)
+                        .padding(2.dp)
                         .fillMaxWidth(),
                     colors = buttonColors(containerColor = Purple200)
-                        
+
 
                 ) {
 
@@ -135,14 +154,14 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
 //                val receivedMessage = intent.getStringExtra("EXTRA_MESSAGE")
                 if (receivedMessage != null) {
                     Text(text =receivedMessage)
-                    viewModel.Location_.value
+                    viewModel.location_.value
 //                    LocalContext.current.stopService(Intent(LocalContext.current, MapsActivity::class.java))
                 }
 
-                Text(text = "Expiry: ", Modifier.padding(4.dp))
+                Text(text = "Expiry: ", Modifier.padding(1.dp))
                 ExposedDropdownMenuBox(
 
-                    modifier = Modifier.padding(16.dp),
+                    modifier = Modifier.padding(2.dp),
                     expanded = viewModel.expanded.value,
                     onExpandedChange = { viewModel.open() },
                 ) {
@@ -158,6 +177,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                             .menuAnchor()
                     )
                     ExposedDropdownMenu(
+                        modifier = Modifier.height(3.dp),
                         expanded = viewModel.expanded.value,
                         onDismissRequest = { viewModel.close() }
                     ) {
@@ -175,10 +195,6 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
             }
         },
         confirmButton = {
-            // If you're getting this app code by cloning the repository at
-            // https://github.com/mongodb/template-app-kotlin-todo, 
-            // it does not contain the data explorer link. Download the
-            // app template from the Atlas UI to view a link to your data.
             var link = stringResource(R.string.dataExplorerLink)
             Button(
                 colors = buttonColors(containerColor = Purple200),

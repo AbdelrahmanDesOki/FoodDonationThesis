@@ -1,6 +1,5 @@
 package com.mongodb.app.presentation.tasks
 
-import android.app.ActivityManager.TaskDescription
 import com.mongodb.app.domain.PriorityLevel
 import android.os.Bundle
 import androidx.compose.runtime.MutableState
@@ -23,7 +22,7 @@ sealed class AddItemEvent {
     class Error(val message: String, val throwable: Throwable) : AddItemEvent()
 }
 
-class AddItemViewModel(
+open class AddItemViewModel(
     private val repository: SyncRepository
 ) : ViewModel() {
 
@@ -39,13 +38,18 @@ class AddItemViewModel(
     val taskDescription: State<String>
         get()= _taskDescription
 
-    private val _Location: MutableState<String> = mutableStateOf("")
-    val Location_: State<String>
-        get()= _Location
+    private val _location: MutableState<String> = mutableStateOf("")
+    val location_: State<String>
+        get()= _location
 
     private val _taskPriority: MutableState<PriorityLevel> = mutableStateOf(PriorityLevel.Tonight)
     val taskPriority: State<PriorityLevel>
         get() = _taskPriority
+
+//    ImageString
+    private val _imagestring: MutableState<String> = mutableStateOf("")
+    val imagestring_: State<String>
+        get()= _imagestring
 
     private val _expanded: MutableState<Boolean> = mutableStateOf(false)
     val expanded: State<Boolean>
@@ -67,6 +71,14 @@ class AddItemViewModel(
         _taskSummary.value = taskSummary
     }
 
+    fun updateLocation(location: String){
+        _location.value =location
+    }
+
+    fun updatePhoto(photo: String){
+        _imagestring.value = photo
+    }
+
     fun updateTaskDescription(taskDescription: String){
         _taskDescription.value = taskDescription
     }
@@ -84,7 +96,7 @@ class AddItemViewModel(
     fun addTask() {
         CoroutineScope(Dispatchers.IO).launch {
             runCatching {
-                repository.addTask(taskSummary.value, taskDescription.value,taskPriority.value, Location_.value)
+                repository.addTask(taskSummary.value, taskDescription.value,taskPriority.value, location_.value, imagestring_.value)
             }.onSuccess {
                 withContext(Dispatchers.Main) {
                     _addItemEvent.emit(AddItemEvent.Info("Task '$taskSummary' with priority '$taskPriority' added successfully."))
@@ -101,7 +113,8 @@ class AddItemViewModel(
     private fun cleanUpAndClose() {
         _taskSummary.value = ""
         _taskDescription.value = ""
-        _Location.value = ""
+        _location.value = ""
+        _imagestring.value = ""
         _taskPriority.value = PriorityLevel.Tonight
         _addItemPopupVisible.value = false
     }
