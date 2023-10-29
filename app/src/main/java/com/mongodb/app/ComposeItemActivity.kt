@@ -48,9 +48,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.lifecycleScope
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.mongodb.app.data.MockRepository
 import com.mongodb.app.data.RealmSyncRepository
 import com.mongodb.app.data.SyncRepository
+import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.AddItemEvent
 import com.mongodb.app.presentation.tasks.AddItemViewModel
 import com.mongodb.app.presentation.tasks.SubscriptionTypeEvent
@@ -261,7 +264,7 @@ fun TaskListScaffold(
             }
 
             if (addItemViewModel.addItemPopupVisible.value) {
-                AddItemPrompt(addItemViewModel)
+                AddItemPrompt(addItemViewModel, task = Item(Firebase.auth.currentUser?.uid.toString()))
             }
         },
         content = {

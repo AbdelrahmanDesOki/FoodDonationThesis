@@ -8,6 +8,7 @@ import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -40,9 +41,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.ViewModel
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapType
@@ -51,8 +54,10 @@ import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.Polygon
 import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.rememberCameraPositionState
+import com.google.maps.android.compose.rememberMarkerState
 import com.mongodb.app.MapsActivity
 import com.mongodb.app.data.SyncRepository
+import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.AddItemViewModel
 import java.io.IOException
 import java.util.Locale
@@ -68,11 +73,18 @@ fun MyMap(
     onChangeMarkerIcon: () -> Unit,
     onChangeMapType: (mapType: MapType) -> Unit,
     onChangeLineType: (lineType: LineType?) -> Unit,
-//    viewModel:AddItemViewModel
+//    viewModel:ViewModel? = AddItemViewModel,
+    task: Item
 ) {
     val latlangList = remember {
         mutableStateListOf(latLng)
     }
+
+//    var viewModel: ViewModel
+
+      var locationString by remember {
+          mutableStateOf("")
+      }
     var mapTypeMenuExpanded by remember { mutableStateOf(false) }
     var mapTypeMenuSelectedText by remember {
         mutableStateOf(
@@ -91,10 +103,20 @@ fun MyMap(
 
 //    val Loc =  Text(text = "Current Location is:" + getCurrentLocation(
 //        this).toString())
-    var markerLocation = LatLng(latlangList[0].latitude, latlangList[0].longitude)
-    var locationAsString = getAddressFromLocation(context,markerLocation.latitude, markerLocation.longitude )
-    val intent = Intent(LocalContext.current, MapsActivity::class.java)
-    intent.putExtra("EXTRA_MESSAGE", locationAsString)
+    var markerLocation by remember {
+//        for (i in 0 until latlangList.size - 1) {
+            mutableStateOf(LatLng(latlangList[0].latitude, latlangList[0].longitude))
+
+//        }
+
+    }
+    var locationAsString by remember {
+        mutableStateOf("")
+    }
+
+
+//    val intent = Intent(LocalContext.current, MapsActivity::class.java)
+//    intent.putExtra("EXTRA_MESSAGE", locationAsString)
 //    AddItemPrompt(viewModel = AddItemViewModel(SyncRepository), location =locationAsString)
 //        "Latitude: ${markerLocation.latitude}, Longitude: ${markerLocation.longitude}"
 
@@ -111,6 +133,12 @@ fun MyMap(
             onMapClick = {
                 if (lineType == null) {
                     latlangList.add(it)
+                    //Issue here is that we need to loop through the latlng list
+                    locationAsString = getAddressFromLocation(
+                        context,
+                        LatLng(latlangList[0].latitude,
+                        latlangList[0].longitude).latitude,
+                        LatLng(latlangList[0].latitude, latlangList[0].longitude).longitude )
                 }
             }
         ) {
@@ -119,15 +147,20 @@ fun MyMap(
             latlangList.toList().forEach {
                 Marker(
 
-                    state = MarkerState(position = it),
+                     draggable = true,
+
+                    state = rememberMarkerState(position = it),
                     title = "Location",
-                    snippet = getAddressFromLocation(context,markerLocation.latitude, markerLocation.longitude ),
+                    snippet =locationASstring(it,context).apply { locationString = locationASstring(it,context).toString() },
+
                     icon = if (changeIcon) {
+//                        locationString = locationASstring(it,context).toString()
                         bitmapDescriptor(context, R.drawable.abc_btn_radio_material)
                     } else null
                 ){
 
                 }
+
             }
 
             if (lineType == LineType.POLYLINE) {
@@ -221,8 +254,19 @@ fun MyMap(
             //need to save the current location
             Button(onClick = {
 //                viewModel.Location_.value.equals(locationAsString)
-                locationAsString = getAddressFromLocation(context,markerLocation.latitude, markerLocation.longitude )
-                intent.putExtra("EXTRA_MESSAGE", locationAsString)
+                task.Location = locationString
+
+                Log.d("task from map side", task.Location)
+
+
+                 // locationAsString
+
+                // on below line we are closing the maps activity.
+//                val activity = MapsActivity()
+//                activity.finish()
+//                System.exit(0)
+
+                //check how to bring view model here
                //need to close the maps activity here
             },
                 ) {
@@ -256,6 +300,8 @@ fun MyMap(
         }
     }
 }
+
+
 //@Composable
 //private fun getAddress(lat: Double, lon: Double) : String?  {
 //    //return string that contain the exact location.
@@ -267,6 +313,33 @@ fun MyMap(
 //}
 
 
+
+fun locationASstring(position: LatLng, context: Context): String? {
+
+    return  getAddress(position.latitude, position.longitude, context)
+}
+//@Composable
+//fun SnipMarker(position: LatLng, title: String, snippet: String?, alpha: Float){
+//    val markerState = rememberMarkerState(null, position)
+//    Marker(
+//        state = markerState,
+//        title = title,
+//        snippet = snippet,
+//        alpha = alpha
+//    )
+//    markerState.showInfoWindow()
+//}
+
+
+ fun getAddress(lat: Double, lon: Double, context: Context) : String?  {
+    //return string that contain the exact location.
+    val geocoder = Geocoder(context, Locale.getDefault())
+    val address =  geocoder.getFromLocation(lat,lon, 1)
+    var locationString = address?.get(0)?.getAddressLine(0).toString()
+//    binding.locationText.text=locationString
+
+    return  locationString
+}
 fun getAddressFromLocation(context: Context, latitude: Double, longitude: Double): String {
     val geocoder = Geocoder(context, Locale.getDefault())
     var result = ""

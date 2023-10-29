@@ -29,6 +29,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 import com.mongodb.app.ComposeItemActivity
 import com.mongodb.app.MapsActivity
@@ -64,7 +66,7 @@ import com.mongodb.app.ui.theme.Purple200
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddItemPrompt(viewModel: AddItemViewModel) {
+fun AddItemPrompt(viewModel: AddItemViewModel, task: Item) {
     var navigateToActivity by remember { mutableStateOf(false) }
     var navigateToPhoto by remember { mutableStateOf(false) }
     var receivedMessage = ""
@@ -141,20 +143,27 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                     }
                     // Launch the new activity using an Intent
                     var intent = Intent(LocalContext.current, MapsActivity::class.java)
-                    receivedMessage = intent.getStringExtra("EXTRA_MESSAGE").toString()
+
 //                    startActivityForResult(MapsActivity, 101)
                     LocalContext.current.startActivity(intent)
+
+                    receivedMessage = task.Location
+                    Log.d("checking task", receivedMessage)
+                    val activity = MapsActivity()
+                    activity.finish()
+//                    LocalContext.current.stopService(intent)
 //                    LocalContext.current.
 //                    viewModel.Location_.value.equals()
 
                 }
 
                 val priorities = PriorityLevel.values()
-                val intent = Intent(LocalContext.current,ComposeItemActivity::class.java)
+//                val intent = Intent(LocalContext.current,ComposeItemActivity::class.java)
 //                val receivedMessage = intent.getStringExtra("EXTRA_MESSAGE")
+//                viewModel.updateLocation()
                 if (receivedMessage != null) {
                     Text(text =receivedMessage)
-                    viewModel.location_.value
+                    viewModel.updateLocation(task.Location )
 //                    LocalContext.current.stopService(Intent(LocalContext.current, MapsActivity::class.java))
                 }
 
@@ -200,7 +209,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel) {
                 colors = buttonColors(containerColor = Purple200),
                 onClick = {
                     viewModel.addTask()
-                    Log.v("TemplateApp","To see your data in Atlas, follow this link:"  + link)
+
                 }
             ) {
                 Text(stringResource(R.string.create))
@@ -226,7 +235,7 @@ fun AddItemPreview() {
         MyApplicationTheme {
             val repository = MockRepository()
             val viewModel = AddItemViewModel(repository)
-            AddItemPrompt(viewModel)
+            AddItemPrompt(viewModel, task = Item(Firebase.auth.currentUser?.uid.toString()))
         }
     }
 }

@@ -14,7 +14,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.mongodb.app.presentation.tasks.AddItemViewModel
 import com.mongodb.app.ui.tasks.CheckForPermission
 import com.mongodb.app.ui.tasks.HomeView
 import com.mongodb.app.ui.tasks.LocationPermissionScreen
@@ -37,13 +39,17 @@ class MapsActivity : ComponentActivity() {
                     Surface(
                         modifier = Modifier.fillMaxSize(),
                         color = MaterialTheme.colorScheme.background
+
                     ) {
                         var hasLocationPermission by remember {
                             mutableStateOf(CheckForPermission(this))
                         }
 
                         if (hasLocationPermission) {
+
                             MapScreen(this)
+
+
                         } else {
                             LocationPermissionScreen {
                                 hasLocationPermission = true

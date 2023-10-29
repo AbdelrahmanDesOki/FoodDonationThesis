@@ -46,7 +46,6 @@ open class AddItemViewModel(
     val taskPriority: State<PriorityLevel>
         get() = _taskPriority
 
-//    ImageString
     private val _imagestring: MutableState<String> = mutableStateOf("")
     val imagestring_: State<String>
         get()= _imagestring
