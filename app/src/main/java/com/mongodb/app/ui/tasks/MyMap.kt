@@ -1,14 +1,11 @@
 package com.mongodb.app.ui.tasks
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
-import android.location.Location
 import android.util.Log
-import android.widget.Toast
+import androidx.activity.compose.LocalFullyDrawnReporterOwner.current
 import androidx.appcompat.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -40,27 +37,68 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.app.ActivityCompat
-import androidx.lifecycle.ViewModel
-import com.google.android.gms.location.LocationServices
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapType
 import com.google.maps.android.compose.Marker
-import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.Polygon
 import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.maps.android.compose.rememberMarkerState
 import com.mongodb.app.MapsActivity
-import com.mongodb.app.data.SyncRepository
+import com.mongodb.app.PreferencesManager
 import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.AddItemViewModel
 import java.io.IOException
 import java.util.Locale
+
+
+
+
+
+//@Composable
+//fun NavigationArgsSample() {
+//    val navController = rememberNavController()
+//    NavHost(
+//        navController = navController,
+//        startDestination = "screen1"
+//    ) {
+//        composable("screen1") {
+//            Screen1(onNavigateToScreen2 = {
+//                navController.navigate("screen2/$it")
+//            })
+//        }
+//        composable(
+//            route = "screen2/{my_param}",
+//            arguments = listOf(
+//                navArgument("my_param") {
+//                    type = NavType.StringType
+//                }
+//            )
+//        ) {
+//            val param = it.arguments?.getString("my_param") ?: ""
+//            Screen2(param = param)
+//        }
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
 
 
 @Composable
@@ -73,7 +111,6 @@ fun MyMap(
     onChangeMarkerIcon: () -> Unit,
     onChangeMapType: (mapType: MapType) -> Unit,
     onChangeLineType: (lineType: LineType?) -> Unit,
-//    viewModel:ViewModel? = AddItemViewModel,
     task: Item
 ) {
     val latlangList = remember {
@@ -104,24 +141,13 @@ fun MyMap(
 //    val Loc =  Text(text = "Current Location is:" + getCurrentLocation(
 //        this).toString())
     var markerLocation by remember {
-//        for (i in 0 until latlangList.size - 1) {
             mutableStateOf(LatLng(latlangList[0].latitude, latlangList[0].longitude))
-
-//        }
-
     }
     var locationAsString by remember {
         mutableStateOf("")
     }
-
-
-//    val intent = Intent(LocalContext.current, MapsActivity::class.java)
-//    intent.putExtra("EXTRA_MESSAGE", locationAsString)
-//    AddItemPrompt(viewModel = AddItemViewModel(SyncRepository), location =locationAsString)
-//        "Latitude: ${markerLocation.latitude}, Longitude: ${markerLocation.longitude}"
-
-
-
+    val preferencesManager = remember { PreferencesManager(context) }
+    val data = remember { mutableStateOf(preferencesManager.getData("myKey", "")) }
 
 
 
@@ -148,10 +174,9 @@ fun MyMap(
                 Marker(
 
                      draggable = true,
-
                     state = rememberMarkerState(position = it),
                     title = "Location",
-                    snippet =locationASstring(it,context).apply { locationString = locationASstring(it,context).toString() },
+                    snippet =locationASstring(it,context).apply { task.Location = locationASstring(it,context).toString() },
 
                     icon = if (changeIcon) {
 //                        locationString = locationASstring(it,context).toString()
@@ -254,12 +279,16 @@ fun MyMap(
             //need to save the current location
             Button(onClick = {
 //                viewModel.Location_.value.equals(locationAsString)
-                task.Location = locationString
+//                task.Location = locationString
 
+                preferencesManager.saveData("myKey", task.Location)
+                data.value = task.Location
+//                saveLocation(task.Location)
+//                viewModel.updateLocation(task.Location)
                 Log.d("task from map side", task.Location)
-
-
-                 // locationAsString
+                //trying to close maps activity
+//                var intent = Intent(context, MapsActivity::class.java)
+//                context.fin
 
                 // on below line we are closing the maps activity.
 //                val activity = MapsActivity()
@@ -269,6 +298,7 @@ fun MyMap(
                 //check how to bring view model here
                //need to close the maps activity here
             },
+//                saveLocation(task.Location)
                 ) {
 
                 Text(text = "Save My Location")
@@ -301,15 +331,10 @@ fun MyMap(
     }
 }
 
-
-//@Composable
-//private fun getAddress(lat: Double, lon: Double) : String?  {
-//    //return string that contain the exact location.
-//    val geocoder = Geocoder(this, Locale.getDefault())
-//    val address =  geocoder.getFromLocation(lat,lon, 1)
+//fun saveLocation(loc: String) {
+//    val x =  mutableStateOf(loc)
 //
-//
-//    return  address?.get(0)?.getAddressLine(0).toString()
+//    return TODO("Provide the return value")
 //}
 
 
@@ -318,17 +343,6 @@ fun locationASstring(position: LatLng, context: Context): String? {
 
     return  getAddress(position.latitude, position.longitude, context)
 }
-//@Composable
-//fun SnipMarker(position: LatLng, title: String, snippet: String?, alpha: Float){
-//    val markerState = rememberMarkerState(null, position)
-//    Marker(
-//        state = markerState,
-//        title = title,
-//        snippet = snippet,
-//        alpha = alpha
-//    )
-//    markerState.showInfoWindow()
-//}
 
 
  fun getAddress(lat: Double, lon: Double, context: Context) : String?  {

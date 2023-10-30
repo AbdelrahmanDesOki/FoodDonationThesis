@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-66:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-74:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/5970d83d98c6849d622433dfa931ec8e/transformed/appcompat-1.6.1/res/values-h720dp-v13/values-h720dp-v13.xml",

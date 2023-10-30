@@ -1,5 +1,6 @@
 package com.mongodb.app.ui.tasks
 
+import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -12,12 +13,15 @@ import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -35,14 +39,15 @@ import com.google.firebase.ktx.Firebase
 import com.mongodb.app.ComposeItemActivity
 import com.mongodb.app.MapsActivity
 import com.mongodb.app.PhotoActivity
+import com.mongodb.app.PreferencesManager
 import com.mongodb.app.R
 import com.mongodb.app.data.MockRepository
 import com.mongodb.app.data.SyncRepository
 import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.AddItemViewModel
+import com.mongodb.app.ui.theme.GoogleMapsTheme
 import com.mongodb.app.ui.theme.MyApplicationTheme
 import com.mongodb.app.ui.theme.Purple200
-
 
 
 //@Composable
@@ -66,10 +71,12 @@ import com.mongodb.app.ui.theme.Purple200
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddItemPrompt(viewModel: AddItemViewModel, task: Item) {
+fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
     var navigateToActivity by remember { mutableStateOf(false) }
     var navigateToPhoto by remember { mutableStateOf(false) }
     var receivedMessage = ""
+    val preferencesManager = remember { PreferencesManager(context) }
+    val data = remember { mutableStateOf(preferencesManager.getData("myKey", "")) }
 
     AlertDialog(
 
@@ -143,27 +150,34 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item) {
                     }
                     // Launch the new activity using an Intent
                     var intent = Intent(LocalContext.current, MapsActivity::class.java)
-
-//                    startActivityForResult(MapsActivity, 101)
                     LocalContext.current.startActivity(intent)
+//                     var context =io.grpc.
+//                        val context= LocalContext.current
+//                    drawMap( context, viewModel = viewModel )
 
-                    receivedMessage = task.Location
-                    Log.d("checking task", receivedMessage)
-                    val activity = MapsActivity()
-                    activity.finish()
+//                    val activity = MapsActivity()
+//                    activity.finish()
 //                    LocalContext.current.stopService(intent)
 //                    LocalContext.current.
 //                    viewModel.Location_.value.equals()
 
                 }
+//                task.Location = saveLocation(task.Location)
+
+                receivedMessage = data.value.toString()
+                   task.Location = receivedMessage
+                Log.d("checking task", receivedMessage)
+                Log.d("checking loc", task.Location)
+
 
                 val priorities = PriorityLevel.values()
 //                val intent = Intent(LocalContext.current,ComposeItemActivity::class.java)
 //                val receivedMessage = intent.getStringExtra("EXTRA_MESSAGE")
 //                viewModel.updateLocation()
                 if (receivedMessage != null) {
-                    Text(text =receivedMessage)
-                    viewModel.updateLocation(task.Location )
+                    Text(text = "Location: $receivedMessage")
+                    viewModel.updateLocation(receivedMessage)
+                    Spacer(modifier = Modifier.height(20.dp))
 //                    LocalContext.current.stopService(Intent(LocalContext.current, MapsActivity::class.java))
                 }
 
@@ -228,6 +242,10 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item) {
     )
 }
 
+
+
+
+
 @Preview(showBackground = true)
 @Composable
 fun AddItemPreview() {
@@ -235,7 +253,8 @@ fun AddItemPreview() {
         MyApplicationTheme {
             val repository = MockRepository()
             val viewModel = AddItemViewModel(repository)
-            AddItemPrompt(viewModel, task = Item(Firebase.auth.currentUser?.uid.toString()))
+            val context = LocalContext.current
+            AddItemPrompt(viewModel, task = Item(Firebase.auth.currentUser?.uid.toString()), context)
         }
     }
 }

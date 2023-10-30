@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-66:/values-uk/values-uk.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-74:/values-uk/values-uk.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/21bc2083420f4598627fa8c708844b09/transformed/play-services-base-18.1.0/res/values-uk/values.xml",

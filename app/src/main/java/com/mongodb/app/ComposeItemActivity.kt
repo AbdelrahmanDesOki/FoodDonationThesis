@@ -3,6 +3,7 @@
 package com.mongodb.app
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -37,6 +38,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -179,6 +181,7 @@ class ComposeItemActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 fun TaskListScaffold(
@@ -264,7 +267,7 @@ fun TaskListScaffold(
             }
 
             if (addItemViewModel.addItemPopupVisible.value) {
-                AddItemPrompt(addItemViewModel, task = Item(Firebase.auth.currentUser?.uid.toString()))
+                AddItemPrompt(addItemViewModel, task = Item(Firebase.auth.currentUser?.uid.toString()), context = LocalContext.current)
             }
         },
         content = {

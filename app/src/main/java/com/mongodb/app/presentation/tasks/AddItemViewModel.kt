@@ -120,14 +120,6 @@ open class AddItemViewModel(
 
 
 
-
-
-
-
-
-
-
-
     companion object {
         fun factory(
             repository: SyncRepository,

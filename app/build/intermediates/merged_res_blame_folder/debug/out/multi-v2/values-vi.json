@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mongodb.app-mergeDebugResources-66:/values-vi/values-vi.xml",
+            "outputFile": "com.mongodb.app-mergeDebugResources-74:/values-vi/values-vi.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/39fe876361faec7ff6af23e64a2d2fdb/transformed/core-1.9.0/res/values-vi/values-vi.xml",
