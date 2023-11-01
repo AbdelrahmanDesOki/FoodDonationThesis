@@ -1,7 +1,6 @@
 package com.mongodb.app.ui.tasks
 
 import android.content.Intent
-import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
@@ -92,11 +91,7 @@ fun TaskItem(
         ) {
 
 
-            ChatButton(onClick = {
-
-
-
-            })
+            ChatButton()
 
 
 
@@ -203,10 +198,7 @@ fun TaskItemPreview() {
 }
 
 @Composable
-fun ChatButton(
-    onClick: () -> Unit,
-
-) {
+fun ChatButton() {
     var navigateToActivity by remember { mutableStateOf(false) }
     IconButton(
         onClick = { navigateToActivity =true },

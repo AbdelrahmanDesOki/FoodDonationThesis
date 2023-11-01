@@ -82,7 +82,7 @@ class HomeViewModel : ViewModel() {
                     }
                 }
 
-//                updateMessages(list)
+                updateMessages(list)
 
 
             }

@@ -151,15 +151,10 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
                     // Launch the new activity using an Intent
                     var intent = Intent(LocalContext.current, MapsActivity::class.java)
                     LocalContext.current.startActivity(intent)
-//                     var context =io.grpc.
-//                        val context= LocalContext.current
-//                    drawMap( context, viewModel = viewModel )
 
 //                    val activity = MapsActivity()
 //                    activity.finish()
-//                    LocalContext.current.stopService(intent)
-//                    LocalContext.current.
-//                    viewModel.Location_.value.equals()
+
 
                 }
 //                task.Location = saveLocation(task.Location)
@@ -168,6 +163,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
                    task.Location = receivedMessage
                 Log.d("checking task", receivedMessage)
                 Log.d("checking loc", task.Location)
+//                LocalContext.current.
 
 
                 val priorities = PriorityLevel.values()
