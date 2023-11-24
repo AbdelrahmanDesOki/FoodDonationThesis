@@ -31,11 +31,11 @@ open class AddItemViewModel(
         get() = _addItemPopupVisible
 
     private val _taskSummary: MutableState<String> = mutableStateOf("")
-    val taskSummary: State<String>
+    val ItemSummary: State<String>
         get() = _taskSummary
 
     private val _taskDescription: MutableState<String> = mutableStateOf("")
-    val taskDescription: State<String>
+    val ItemDescription: State<String>
         get()= _taskDescription
 
     private val _location: MutableState<String> = mutableStateOf("")
@@ -43,7 +43,7 @@ open class AddItemViewModel(
         get()= _location
 
     private val _taskPriority: MutableState<PriorityLevel> = mutableStateOf(PriorityLevel.Tonight)
-    val taskPriority: State<PriorityLevel>
+    val ItemPriority: State<PriorityLevel>
         get() = _taskPriority
 
     private val _imagestring: MutableState<String> = mutableStateOf("")
@@ -95,14 +95,14 @@ open class AddItemViewModel(
     fun addTask() {
         CoroutineScope(Dispatchers.IO).launch {
             runCatching {
-                repository.addTask(taskSummary.value, taskDescription.value,taskPriority.value, location_.value, imagestring_.value)
+                repository.addTask(ItemSummary.value, ItemDescription.value,ItemPriority.value, location_.value, imagestring_.value)
             }.onSuccess {
                 withContext(Dispatchers.Main) {
-                    _addItemEvent.emit(AddItemEvent.Info("Task '$taskSummary' with priority '$taskPriority' added successfully."))
+                    _addItemEvent.emit(AddItemEvent.Info("Item '$ItemSummary' with priority '$ItemPriority' added successfully."))
                 }
             }.onFailure {
                 withContext(Dispatchers.Main) {
-                    _addItemEvent.emit(AddItemEvent.Error("There was an error while adding the task '$taskSummary'", it))
+                    _addItemEvent.emit(AddItemEvent.Error("There was an error while adding the item '$ItemSummary'", it))
                 }
             }
             cleanUpAndClose()

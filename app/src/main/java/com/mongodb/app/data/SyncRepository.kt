@@ -21,9 +21,9 @@ import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 import com.mongodb.app.domain.PriorityLevel
 
-/**
- * Repository for accessing Realm Sync.
- */
+
+ //Repository for accessing Realm Sync.
+
 interface SyncRepository {
 
     /**

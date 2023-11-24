@@ -14,19 +14,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.google.firebase.auth.FirebaseAuth
 import com.mongodb.app.presentation.tasks.AddItemViewModel
-import com.mongodb.app.ui.tasks.CheckForPermission
-import com.mongodb.app.ui.tasks.HomeView
-import com.mongodb.app.ui.tasks.LocationPermissionScreen
-import com.mongodb.app.ui.tasks.MapScreen
+import com.mongodb.app.ui.tasks.Map.CheckForPermission
+import com.mongodb.app.ui.tasks.Map.LocationPermissionScreen
+import com.mongodb.app.ui.tasks.Map.MapScreen
 import com.mongodb.app.ui.theme.GoogleMapsTheme
 import com.mongodb.app.ui.theme.MyApplicationTheme
-import kotlinx.coroutines.isActive
 
 class MapsActivity() : ComponentActivity() {
 

@@ -10,7 +10,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <item name="action_delete" type="id"/>
-    <string name="account_clarification">Please log in or register with a Device Sync user account. This is separate from your Atlas Cloud login.</string>
+    <string name="account_clarification">Please log in or register with your account and Sync user account.</string>
     <string name="add_item">Add Item</string>
     <string name="airplane_mode">Airplane Mode</string>
     <string name="already_have_account">Already have an account? Log in</string>
@@ -46,9 +46,9 @@
     <string name="realm_data_api_base_url">https://eu-central-1.aws.data.mongodb-api.com</string>
     <string name="realm_data_explorer_link">https://cloud.mongodb.com/links/6511ecba6ec1270fac244353/explorer/AtlasCluster/database/collection/find</string>
     <string name="realm_data_source_name">mongodb-atlas</string>
-    <string name="show_all_tasks">Show all tasks</string>
+    <string name="show_all_tasks">Show all Items</string>
     <string name="show_completed_tasks_only">Show completed tasks only</string>
-    <string name="sync_message">Log in with the same account on another device or simulator to see your list sync in real-time.</string>
+    <string name="sync_message">Log in with the same account to access your items.</string>
     <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_photo">PhotoActivity</string>

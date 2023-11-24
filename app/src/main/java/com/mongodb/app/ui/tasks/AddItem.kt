@@ -13,15 +13,13 @@ import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -36,36 +34,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-import com.mongodb.app.ComposeItemActivity
 import com.mongodb.app.MapsActivity
-import com.mongodb.app.PhotoActivity
 import com.mongodb.app.PreferencesManager
 import com.mongodb.app.R
 import com.mongodb.app.data.MockRepository
-import com.mongodb.app.data.SyncRepository
 import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.AddItemViewModel
-import com.mongodb.app.ui.theme.GoogleMapsTheme
+import com.mongodb.app.ui.tasks.Photo.SinglePhotoPicker
 import com.mongodb.app.ui.theme.MyApplicationTheme
 import com.mongodb.app.ui.theme.Purple200
 
-
-//@Composable
-//fun navigation(){
-//    val navController = rememberNavController()
-//    NavHost(navController = navController, startDestination = Screen.MainScreen.route ){
-//        composable(route = Screen.MainScreen.route){
-//            MainScreen(navController = navController)
-//        }
-//
-//        composable(route = Screen.SinglePhotoPicker.route,
-//            arguments = navArgument("viewModel"){
-//                type = NavType.ReferenceType
-//            }
-//
-//        )
-//    }
-//}
 
 
 
@@ -91,7 +69,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
                 //title of food
                 TextField(
                     colors = ExposedDropdownMenuDefaults.textFieldColors(containerColor = Color.White),
-                    value = viewModel.taskSummary.value,
+                    value = viewModel.ItemSummary.value,
                     maxLines = 2,
                     onValueChange = {
                         viewModel.updateTaskSummary(it)
@@ -101,7 +79,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
                 //Details of food
                 TextField (
                     colors = ExposedDropdownMenuDefaults.textFieldColors(containerColor = Color.White),
-                    value = viewModel.taskDescription.value,
+                    value = viewModel.ItemDescription.value,
                     maxLines = 6,
                     onValueChange = {
                         viewModel.updateTaskDescription(it)
@@ -127,18 +105,16 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
 
                 }
 
-                Spacer(modifier = Modifier.height(120.dp))
-                Spacer(modifier = Modifier.height(60.dp))
+//                Spacer(modifier = Modifier.height(120.dp))
+//                Spacer(modifier = Modifier.height(80.dp))
 
                 Button(onClick = {
                     navigateToActivity = true
-                                 },
+                },
                     modifier = Modifier
                         .padding(2.dp)
                         .fillMaxWidth(),
                     colors = buttonColors(containerColor = Purple200)
-
-
                 ) {
 
                     Text(text = "Add your Location")
@@ -173,11 +149,12 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
                 if (receivedMessage != null) {
                     Text(text = "Location: $receivedMessage")
                     viewModel.updateLocation(receivedMessage)
-                    Spacer(modifier = Modifier.height(20.dp))
+//                    Spacer(modifier = Modifier.height(20.dp))
 //                    LocalContext.current.stopService(Intent(LocalContext.current, MapsActivity::class.java))
                 }
-
+//                Spacer(modifier = Modifier.height(10.dp))
                 Text(text = "Expiry: ", Modifier.padding(1.dp))
+                Spacer(modifier = Modifier.height(15.dp))
                 ExposedDropdownMenuBox(
 
                     modifier = Modifier.padding(2.dp),
@@ -186,7 +163,8 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
                 ) {
                     TextField(
                         readOnly = true,
-                        value = viewModel.taskPriority.value.name,
+
+                        value = viewModel.ItemPriority.value.name,
                         onValueChange = {},
                         label = { Text(stringResource(R.string.item_priority)) },
                         trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = viewModel.expanded.value) },
@@ -194,15 +172,19 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .menuAnchor()
+                            .safeContentPadding()
                     )
+//                    Spacer(modifier = Modifier.height(10.dp))
                     ExposedDropdownMenu(
-                        modifier = Modifier.height(3.dp),
+                        modifier = Modifier.height(20.dp),
                         expanded = viewModel.expanded.value,
+
                         onDismissRequest = { viewModel.close() }
                     ) {
                         priorities.forEach {
                             DropdownMenuItem(
                                 text = { Text(it.name) },
+                                modifier = Modifier.fillMaxWidth(),
                                 onClick = {
                                     viewModel.updateTaskPriority(it)
                                     viewModel.close()
@@ -213,7 +195,9 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
                 }
             }
         },
+
         confirmButton = {
+//            Spacer(modifier = Modifier.height(20.dp))
             var link = stringResource(R.string.dataExplorerLink)
             Button(
                 colors = buttonColors(containerColor = Purple200),
@@ -226,6 +210,7 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
             }
         },
         dismissButton = {
+//            Spacer(modifier = Modifier.height(20.dp))
             Button(
                 colors = buttonColors(containerColor = Purple200),
                 onClick = {

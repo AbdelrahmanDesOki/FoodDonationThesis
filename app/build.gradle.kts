@@ -71,14 +71,6 @@ dependencies {
 
     //google maps utils
     implementation("com.google.maps.android:android-maps-utils:3.4.0")
-//   implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-//    implementation("androidx.compose.ui:ui-graphics")
-//    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
-//    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-//    debugImplementation("androidx.compose.ui:ui-test-manifest")
-
-//    implementation ("androidx.compose.material2:material-icons-extended:1.0.0-beta01")
-//    implementation ("androidx.compose.material:material:1.5.2")
 
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:28.3.0"))

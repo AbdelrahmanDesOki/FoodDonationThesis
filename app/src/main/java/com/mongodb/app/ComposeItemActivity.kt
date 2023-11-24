@@ -191,24 +191,24 @@ fun TaskListScaffold(
     subscriptionTypeViewModel: SubscriptionTypeViewModel,
     taskViewModel: TaskViewModel
 ) {
-    val annotatedLinkString = buildAnnotatedString {
-        val linkString = "To see your changes in Atlas, tap here."
-        val startIndex = linkString.indexOf("here")
-        val endIndex = startIndex + 4
-        append(linkString)
-        addStyle(
-            style = SpanStyle(
-                color = Color.Blue,
-                textDecoration = TextDecoration.Underline
-            ), start = startIndex, end = endIndex
-        )
-        addStringAnnotation(
-            tag = "URL",
-            annotation = stringResource(id = R.string.dataExplorerLink),
-            start = startIndex,
-            end = endIndex
-        )
-    }
+//    val annotatedLinkString = buildAnnotatedString {
+//        val linkString = ""
+//        val startIndex = linkString.indexOf("here")
+//        val endIndex = startIndex + 4
+//        append(linkString)
+//        addStyle(
+//            style = SpanStyle(
+//                color = Color.Blue,
+//                textDecoration = TextDecoration.Underline
+//            ), start = startIndex, end = endIndex
+//        )
+//        addStringAnnotation(
+//            tag = "URL",
+//            annotation = stringResource(id = R.string.dataExplorerLink),
+//            start = startIndex,
+//            end = endIndex
+//        )
+//    }
     val uriHandler = LocalUriHandler.current
 
     Scaffold(
@@ -221,25 +221,25 @@ fun TaskListScaffold(
                     modifier = Modifier.align(Alignment.Top)
                         .padding(0.dp, 0.dp, 0.dp, 0.dp),
                 ) {
-                    ClickableText(
-                        modifier = Modifier
-                            .background(Color.LightGray)
-                            .padding(0.dp, 44.dp, 0.dp, 0.dp)
-                            .align(Alignment.BottomCenter)
-                            .fillMaxWidth(),
-                        text = annotatedLinkString,
-                        style = TextStyle(
-                            textAlign = TextAlign.Center,
-                            fontSize = 16.sp
-                        ),
-                        onClick = {
-                            annotatedLinkString
-                                .getStringAnnotations("URL", it, it)
-                                .firstOrNull()?.let { stringAnnotation ->
-                                    uriHandler.openUri(stringAnnotation.item)
-                                }
-                        }
-                    )
+//                    ClickableText(
+//                        modifier = Modifier
+//                            .background(Color.LightGray)
+//                            .padding(0.dp, 44.dp, 0.dp, 0.dp)
+//                            .align(Alignment.BottomCenter)
+//                            .fillMaxWidth(),
+////                        text = annotatedLinkString,
+//                        style = TextStyle(
+//                            textAlign = TextAlign.Center,
+//                            fontSize = 16.sp
+//                        ),
+//                        onClick = {
+////                            annotatedLinkString
+////                                .getStringAnnotations("URL", it, it)
+////                                .firstOrNull()?.let { stringAnnotation ->
+////                                    uriHandler.openUri(stringAnnotation.item)
+////                                }
+//                        }
+//                    )
                     Text(
                         text = stringResource(R.string.sync_message),
                         textAlign = TextAlign.Center,

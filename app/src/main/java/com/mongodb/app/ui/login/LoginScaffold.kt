@@ -26,11 +26,9 @@ import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.mongodb.app.MapsActivity
 import com.mongodb.app.R
 import com.mongodb.app.presentation.login.LoginAction
 import com.mongodb.app.presentation.login.LoginViewModel
-import com.mongodb.app.ui.tasks.HomeView
 import com.mongodb.app.ui.theme.Blue
 import com.mongodb.app.ui.theme.Purple200
 
@@ -119,13 +117,14 @@ fun LoginScaffold(loginViewModel: LoginViewModel) {
                                 auth.createUserWithEmailAndPassword(loginViewModel.state.value.email, loginViewModel.state.value.password)
                                 .addOnCompleteListener {
                                     if (it.isSuccessful) {
+                                        auth.signInWithEmailAndPassword(loginViewModel.state.value.email, loginViewModel.state.value.password)
+                                            .addOnCompleteListener {
+                                                if (it.isSuccessful) {
+                                                }
+                                            }
                                     }
                                 }
-                                auth.signInWithEmailAndPassword(loginViewModel.state.value.email, loginViewModel.state.value.password)
-                                    .addOnCompleteListener {
-                                            if (it.isSuccessful) {
-                                            }
-                                            }
+
 
 
 

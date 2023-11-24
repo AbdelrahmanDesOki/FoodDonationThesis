@@ -45,6 +45,7 @@ import com.mongodb.app.data.MockRepository
 import com.mongodb.app.domain.Item
 import com.mongodb.app.presentation.tasks.ItemContextualMenuViewModel
 import com.mongodb.app.presentation.tasks.TaskViewModel
+import com.mongodb.app.ui.tasks.Messages.HomeViewModel
 import com.mongodb.app.ui.theme.Blue
 import com.mongodb.app.ui.theme.MyApplicationTheme
 import com.mongodb.app.ui.theme.Purple200
@@ -104,15 +105,7 @@ fun TaskItem(
                     fontSize = 20.sp
 
                     )
-                // Ownership text visible only if task is mine
-//                if (taskViewModel.isTaskMine(task)) {
-//                    Text(
-//                        text = stringResource(R.string.mine),
-//                        style = MaterialTheme.typography.bodySmall
-//                    )
-//                }
             }
-
             Row(
                 horizontalArrangement = Arrangement.End,
                 modifier = Modifier.fillMaxWidth()
@@ -170,18 +163,6 @@ fun TaskItem(
 
 }
 
-//@Composable
-//fun ConditionalNavigation() {
-//    val currentUser = FirebaseAuth.getInstance().currentUser
-//
-//    if (currentUser != null) {
-//        HomeView()
-//    } else {
-//        // Display a login screen or navigate to it.
-//        // You can use the Navigation component for navigation.
-//        Text("Please log in")
-//    }
-//}
 
 @Preview(showBackground = true)
 @Composable

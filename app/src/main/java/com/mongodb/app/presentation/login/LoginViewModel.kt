@@ -16,9 +16,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 /**
  * Types of UX events triggered by user actions.
@@ -42,9 +39,7 @@ enum class LoginAction {
     LOGIN, CREATE_ACCOUNT
 }
 
-/**
- * UI representation of a screen state.
- */
+// UI representation
 data class LoginState(
     val action: LoginAction,
     val email: String = "",
@@ -52,9 +47,9 @@ data class LoginState(
     val enabled: Boolean = true
 ) {
     companion object {
-        /**
-         * Initial UI state of the login screen.
-         */
+
+         // Initial UI state of the login screen.
+
         val initialState = LoginState(action = LoginAction.LOGIN)
     }
 }
@@ -94,16 +89,14 @@ class LoginViewModel : ViewModel() {
                 _event.emit(LoginEvent.ShowMessage(EventSeverity.INFO, "User created successfully."))
 
                 login(email, password)
-
             }.onFailure { ex: Throwable ->
                 _state.value = state.value.copy(enabled = true)
                 val message = when (ex) {
-                    is UserAlreadyExistsException -> "Failed to register. User already exists."
+                    is UserAlreadyExistsException -> "Failed to register. As the user already exists."
                     else -> "Failed to register: ${ex.message}"
                 }
                 _event.emit(LoginEvent.ShowMessage(EventSeverity.ERROR, message))
             }
-
         }
     }
 

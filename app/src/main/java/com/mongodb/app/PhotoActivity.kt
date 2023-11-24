@@ -10,8 +10,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.mongodb.app.presentation.tasks.AddItemViewModel
-import com.mongodb.app.ui.tasks.SinglePhotoPicker
 import com.mongodb.app.ui.theme.MyApplicationTheme
 
 
