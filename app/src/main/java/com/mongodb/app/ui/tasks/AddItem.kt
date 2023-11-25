@@ -105,8 +105,6 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
 
                 }
 
-//                Spacer(modifier = Modifier.height(120.dp))
-//                Spacer(modifier = Modifier.height(80.dp))
 
                 Button(onClick = {
                     navigateToActivity = true
@@ -143,14 +141,11 @@ fun AddItemPrompt(viewModel: AddItemViewModel, task: Item, context: Context) {
 
 
                 val priorities = PriorityLevel.values()
-//                val intent = Intent(LocalContext.current,ComposeItemActivity::class.java)
-//                val receivedMessage = intent.getStringExtra("EXTRA_MESSAGE")
-//                viewModel.updateLocation()
+
                 if (receivedMessage != null) {
                     Text(text = "Location: $receivedMessage")
                     viewModel.updateLocation(receivedMessage)
-//                    Spacer(modifier = Modifier.height(20.dp))
-//                    LocalContext.current.stopService(Intent(LocalContext.current, MapsActivity::class.java))
+
                 }
 //                Spacer(modifier = Modifier.height(10.dp))
                 Text(text = "Expiry: ", Modifier.padding(1.dp))

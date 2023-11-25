@@ -133,12 +133,12 @@ fun TaskItem(
                     bottom = extraPadding.coerceAtLeast(5.dp)
                 )) {
                     Text(text = task.description)
+                    Text(text = "Location: ${task.Location}")
 
                     storageReference.downloadUrl.addOnSuccessListener { uri ->
                         // Use the URI to display or process the image
                          imageUrl = uri.toString()
-                        //for testing purposes
-//                        Log.d("Image URL", imageUrl!!)
+
 
                          photoloaded = true
 

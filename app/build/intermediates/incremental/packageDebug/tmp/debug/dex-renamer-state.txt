@@ -1,4 +1,4 @@
-#Thu Nov 23 19:01:21 CET 2023
+#Sat Nov 25 08:50:55 CET 2023
 base.0=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.10=/Users/admin/Desktop/FoodDonationThesis/FoodDonationThesis/app/build/intermediates/dex/debug/mergeExtDexDebug/classes4.dex
