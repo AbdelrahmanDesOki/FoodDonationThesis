@@ -60,7 +60,7 @@ class LoginViewModel : ViewModel() {
     val state: State<LoginState>
         get() = _state
 
-    private val _event: MutableSharedFlow<LoginEvent> = MutableSharedFlow()
+    val _event: MutableSharedFlow<LoginEvent> = MutableSharedFlow()
     val event: Flow<LoginEvent>
         get() = _event
 

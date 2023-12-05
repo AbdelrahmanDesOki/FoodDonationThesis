@@ -1,7 +1,8 @@
 package com.mongodb.app.data
 
-import com.mongodb.app.domain.Item
 import com.mongodb.app.app
+import com.mongodb.app.domain.Item
+import com.mongodb.app.domain.PriorityLevel
 import io.realm.kotlin.Realm
 import io.realm.kotlin.ext.query
 import io.realm.kotlin.mongodb.User
@@ -19,7 +20,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
-import com.mongodb.app.domain.PriorityLevel
 
 
  //Repository for accessing Realm Sync.
@@ -47,22 +47,22 @@ interface SyncRepository {
     suspend fun updateSubscriptions(subscriptionType: SubscriptionType)
 
     /**
-     * Deletes a given task.
+     * Deletes a  task.
      */
     suspend fun deleteTask(task: Item)
 
     /**
-     * Returns the active [SubscriptionType].
+     * Returns the valid [SubscriptionType].
      */
     fun getActiveSubscriptionType(realm: Realm? = null): SubscriptionType
 
     /**
-     * Pauses synchronization with MongoDB. This is used to emulate a scenario of no connectivity.
+            This is used to simulate a scenario of no connectivity.
      */
     fun pauseSync()
 
     /**
-     * Resumes synchronization with MongoDB.
+     * Resumes synchronization
      */
     fun resumeSync()
 
@@ -72,7 +72,7 @@ interface SyncRepository {
     fun isTaskMine(task: Item): Boolean
 
     /**
-     * Closes the realm instance held by this repository.
+     * Closes the realm instance 
      */
     fun close()
 }
